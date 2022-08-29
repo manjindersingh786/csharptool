@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
-using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
@@ -100,49 +99,9 @@ namespace WindowsFormsApp1
             label1.Text = @"File Converted";
         }
 
-        static byte[] EncryptStringToBytes_Aes(byte[] plainText, byte[] Key, byte[] IV)
-        {
-            // Check arguments.
-            if (plainText == null || plainText.Length <= 0)
-                throw new ArgumentNullException("plainText");
-            if (Key == null || Key.Length <= 0)
-                throw new ArgumentNullException("Key");
-            if (IV == null || IV.Length <= 0)
-                throw new ArgumentNullException("IV");
-            byte[] encrypted;
-
-            // Create an Aes object
-            // with the specified key and IV.
-            using (Aes aesAlg = Aes.Create())
-            {
-                aesAlg.Key = Key;
-                aesAlg.IV = IV;
-
-                // Create an encryptor to perform the stream transform.
-                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-
-                // Create the streams used for encryption.
-                using (MemoryStream msEncrypt = new MemoryStream())
-                {
-                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
-                    {
-                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
-                        {
-                            //Write all data to the stream.
-                            swEncrypt.Write(plainText);
-                        }
-                        encrypted = msEncrypt.ToArray();
-                    }
-                }
-            }
-
-            // Return the encrypted bytes from the memory stream.
-            return encrypted;
-        }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton1.Checked == true)
+            if(compRadioButton.Checked == true)
             {
                 sresLabel.ForeColor = Color.Black;
                 kcLabel.ForeColor = Color.Black;
@@ -162,7 +121,7 @@ namespace WindowsFormsApp1
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton2.Checked == true)
+            if (milenageRadioButton.Checked == true)
             {
                 resLabel.ForeColor = Color.Black;
                 opcLabel.ForeColor = Color.Black;
@@ -189,7 +148,7 @@ namespace WindowsFormsApp1
         {
             byte[] arr = new byte[hex.Length >> 1];
 
-            for (int i = 0; i < hex.Length >> 1; ++i)
+            for (int i = 0; i < arr.Length; ++i)
             {
                 arr[i] = (byte)((GetHexVal(hex[i << 1]) << 4) + (GetHexVal(hex[(i << 1) + 1])));
             }
@@ -210,7 +169,66 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
+            errorLabel.Text = "";
+            if (true == compRadioButton.Checked)
+            {
+                if(kText.TextLength != 32)
+                {
+                    errorLabel.Text = "Invalid length of K, must be 16 bytes";
+                    return;
 
+                }else if (randText.TextLength != 32)
+                {
+                    errorLabel.Text = "Invalid length of RAND, must be 16 bytes";
+                    return;
+                }
+
+                byte[] random = StringToByteArrayFastest(randText.Text);
+                byte[] key = StringToByteArrayFastest(kText.Text);
+
+            }
+            else // Milenage
+            {
+                if (opText.TextLength != 32)
+                {
+                    errorLabel.Text = "Invalid length of OP, must be 16 bytes";
+                    return;
+
+                }
+                else if (kText.TextLength != 32)
+                {
+                    errorLabel.Text = "Invalid length of K, must be 16 bytes";
+                    return;
+
+                }
+                else if (randText.TextLength != 32)
+                {
+                    errorLabel.Text = "Invalid length of RAND, must be 16 bytes";
+                    return;
+                }
+                else if (sqnText.TextLength != 12)
+                {
+                    errorLabel.Text = "Invalid length of SQN, must be 6 bytes";
+                    return;
+                }
+                else if (amfText.TextLength != 4)
+                {
+                    errorLabel.Text = "Invalid length of AMF, must be 4 bytes";
+                    return;
+                }
+
+                byte[] random = StringToByteArrayFastest(randText.Text);
+                byte[] key = StringToByteArrayFastest(kText.Text);
+                byte[] op = StringToByteArrayFastest(opText.Text);
+                byte[] sqn = StringToByteArrayFastest(sqnText.Text);
+                byte[] amf = StringToByteArrayFastest(amfText.Text);
+                byte[] iv = new byte[0x10];
+                
+                Milenage.setOpc(op, key);
+
+                byte[] mac = Milenage.f1(key, random, sqn, amf);
+                resText.Text = BitConverter.ToString(mac).Replace("-", "");
+            }
         }
 
         private void hexKeyOnly(System.Windows.Forms.KeyPressEventArgs e)
@@ -258,5 +276,7 @@ namespace WindowsFormsApp1
         {
             hexKeyOnly(e);
         }
+
+
     }
 }

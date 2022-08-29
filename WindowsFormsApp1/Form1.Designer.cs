@@ -37,7 +37,8 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.resultGroupBox = new System.Windows.Forms.GroupBox();
             this.akLabel = new System.Windows.Forms.Label();
             this.ikLabel = new System.Windows.Forms.Label();
             this.ckLabel = new System.Windows.Forms.Label();
@@ -52,9 +53,9 @@ namespace WindowsFormsApp1
             this.opcText = new System.Windows.Forms.TextBox();
             this.kcText = new System.Windows.Forms.TextBox();
             this.sresText = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.algoGroupBox = new System.Windows.Forms.GroupBox();
+            this.compRadioButton = new System.Windows.Forms.RadioButton();
+            this.milenageRadioButton = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.amfLabel = new System.Windows.Forms.Label();
             this.amfText = new System.Windows.Forms.TextBox();
@@ -70,8 +71,8 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.resultGroupBox.SuspendLayout();
+            this.algoGroupBox.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,8 +137,9 @@ namespace WindowsFormsApp1
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.errorLabel);
+            this.tabPage2.Controls.Add(this.resultGroupBox);
+            this.tabPage2.Controls.Add(this.algoGroupBox);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.amfLabel);
             this.tabPage2.Controls.Add(this.amfText);
@@ -156,27 +158,35 @@ namespace WindowsFormsApp1
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Authentication";
             // 
-            // groupBox2
+            // errorLabel
             // 
-            this.groupBox2.Controls.Add(this.akLabel);
-            this.groupBox2.Controls.Add(this.ikLabel);
-            this.groupBox2.Controls.Add(this.ckLabel);
-            this.groupBox2.Controls.Add(this.resLabel);
-            this.groupBox2.Controls.Add(this.opcLabel);
-            this.groupBox2.Controls.Add(this.kcLabel);
-            this.groupBox2.Controls.Add(this.sresLabel);
-            this.groupBox2.Controls.Add(this.akText);
-            this.groupBox2.Controls.Add(this.ikText);
-            this.groupBox2.Controls.Add(this.ckText);
-            this.groupBox2.Controls.Add(this.resText);
-            this.groupBox2.Controls.Add(this.opcText);
-            this.groupBox2.Controls.Add(this.kcText);
-            this.groupBox2.Controls.Add(this.sresText);
-            this.groupBox2.Location = new System.Drawing.Point(32, 191);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(660, 232);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(467, 165);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 20);
+            this.errorLabel.TabIndex = 15;
+            // 
+            // resultGroupBox
+            // 
+            this.resultGroupBox.Controls.Add(this.akLabel);
+            this.resultGroupBox.Controls.Add(this.ikLabel);
+            this.resultGroupBox.Controls.Add(this.ckLabel);
+            this.resultGroupBox.Controls.Add(this.resLabel);
+            this.resultGroupBox.Controls.Add(this.opcLabel);
+            this.resultGroupBox.Controls.Add(this.kcLabel);
+            this.resultGroupBox.Controls.Add(this.sresLabel);
+            this.resultGroupBox.Controls.Add(this.akText);
+            this.resultGroupBox.Controls.Add(this.ikText);
+            this.resultGroupBox.Controls.Add(this.ckText);
+            this.resultGroupBox.Controls.Add(this.resText);
+            this.resultGroupBox.Controls.Add(this.opcText);
+            this.resultGroupBox.Controls.Add(this.kcText);
+            this.resultGroupBox.Controls.Add(this.sresText);
+            this.resultGroupBox.Location = new System.Drawing.Point(32, 191);
+            this.resultGroupBox.Name = "resultGroupBox";
+            this.resultGroupBox.Size = new System.Drawing.Size(660, 232);
+            this.resultGroupBox.TabIndex = 14;
+            this.resultGroupBox.TabStop = false;
             // 
             // akLabel
             // 
@@ -304,40 +314,40 @@ namespace WindowsFormsApp1
             this.sresText.Size = new System.Drawing.Size(281, 22);
             this.sresText.TabIndex = 0;
             // 
-            // groupBox1
+            // algoGroupBox
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Location = new System.Drawing.Point(543, 9);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(149, 83);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Algorithms";
+            this.algoGroupBox.Controls.Add(this.compRadioButton);
+            this.algoGroupBox.Controls.Add(this.milenageRadioButton);
+            this.algoGroupBox.Location = new System.Drawing.Point(543, 9);
+            this.algoGroupBox.Name = "algoGroupBox";
+            this.algoGroupBox.Size = new System.Drawing.Size(149, 83);
+            this.algoGroupBox.TabIndex = 13;
+            this.algoGroupBox.TabStop = false;
+            this.algoGroupBox.Text = "Algorithms";
             // 
-            // radioButton1
+            // compRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 21);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(109, 20);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "COMP-128 v3";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.compRadioButton.AutoSize = true;
+            this.compRadioButton.Checked = true;
+            this.compRadioButton.Location = new System.Drawing.Point(6, 21);
+            this.compRadioButton.Name = "compRadioButton";
+            this.compRadioButton.Size = new System.Drawing.Size(109, 20);
+            this.compRadioButton.TabIndex = 11;
+            this.compRadioButton.TabStop = true;
+            this.compRadioButton.Text = "COMP-128 v3";
+            this.compRadioButton.UseVisualStyleBackColor = true;
+            this.compRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // milenageRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(84, 20);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.Text = "Milenage";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.milenageRadioButton.AutoSize = true;
+            this.milenageRadioButton.Location = new System.Drawing.Point(6, 47);
+            this.milenageRadioButton.Name = "milenageRadioButton";
+            this.milenageRadioButton.Size = new System.Drawing.Size(84, 20);
+            this.milenageRadioButton.TabIndex = 12;
+            this.milenageRadioButton.Text = "Milenage";
+            this.milenageRadioButton.UseVisualStyleBackColor = true;
+            this.milenageRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // button3
             // 
@@ -367,7 +377,6 @@ namespace WindowsFormsApp1
             this.amfText.Name = "amfText";
             this.amfText.Size = new System.Drawing.Size(87, 22);
             this.amfText.TabIndex = 9;
-            this.amfText.KeyPress += AmfText_KeyPress;
             // 
             // sqnLabel
             // 
@@ -387,7 +396,6 @@ namespace WindowsFormsApp1
             this.sqnText.Name = "sqnText";
             this.sqnText.Size = new System.Drawing.Size(207, 22);
             this.sqnText.TabIndex = 7;
-            this.sqnText.KeyPress += SqnText_KeyPress;
             // 
             // randLabel
             // 
@@ -405,7 +413,6 @@ namespace WindowsFormsApp1
             this.randText.Name = "randText";
             this.randText.Size = new System.Drawing.Size(353, 22);
             this.randText.TabIndex = 5;
-            this.randText.KeyPress += RandText_KeyPress;
             // 
             // kLabel
             // 
@@ -423,7 +430,6 @@ namespace WindowsFormsApp1
             this.kText.Name = "kText";
             this.kText.Size = new System.Drawing.Size(353, 22);
             this.kText.TabIndex = 3;
-            this.kText.KeyPress += kText_KeyPress;
             // 
             // opLabel
             // 
@@ -444,7 +450,6 @@ namespace WindowsFormsApp1
             this.opText.Name = "opText";
             this.opText.Size = new System.Drawing.Size(353, 22);
             this.opText.TabIndex = 1;
-            this.opText.KeyPress += OpText_KeyPress;
             // 
             // tabPage1
             // 
@@ -483,10 +488,10 @@ namespace WindowsFormsApp1
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.resultGroupBox.ResumeLayout(false);
+            this.resultGroupBox.PerformLayout();
+            this.algoGroupBox.ResumeLayout(false);
+            this.algoGroupBox.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
@@ -515,10 +520,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox kText;
         private System.Windows.Forms.Label opLabel;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton milenageRadioButton;
+        private System.Windows.Forms.RadioButton compRadioButton;
+        private System.Windows.Forms.GroupBox algoGroupBox;
+        private System.Windows.Forms.GroupBox resultGroupBox;
         private System.Windows.Forms.TextBox sresText;
         private System.Windows.Forms.TextBox akText;
         private System.Windows.Forms.TextBox ikText;
@@ -533,6 +538,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label resLabel;
         private System.Windows.Forms.Label opcLabel;
         private System.Windows.Forms.Label kcLabel;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 
