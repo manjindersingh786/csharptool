@@ -39,6 +39,10 @@ namespace WindowsFormsApp1
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.errorLabel = new System.Windows.Forms.Label();
             this.resultGroupBox = new System.Windows.Forms.GroupBox();
+            this.macLabel = new System.Windows.Forms.Label();
+            this.macText = new System.Windows.Forms.TextBox();
+            this.autnLabel = new System.Windows.Forms.Label();
+            this.autnText = new System.Windows.Forms.TextBox();
             this.akLabel = new System.Windows.Forms.Label();
             this.ikLabel = new System.Windows.Forms.Label();
             this.ckLabel = new System.Windows.Forms.Label();
@@ -69,11 +73,38 @@ namespace WindowsFormsApp1
             this.opText = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.opText2 = new System.Windows.Forms.TextBox();
+            this.macResultLabel = new System.Windows.Forms.Label();
+            this.errLabel2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.sqnText2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.akText2 = new System.Windows.Forms.TextBox();
+            this.ikText2 = new System.Windows.Forms.TextBox();
+            this.ckText2 = new System.Windows.Forms.TextBox();
+            this.resText2 = new System.Windows.Forms.TextBox();
+            this.opcText2 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.randText2 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.kText2 = new System.Windows.Forms.TextBox();
+            this.autnLabel2 = new System.Windows.Forms.Label();
+            this.autnText2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.resultGroupBox.SuspendLayout();
             this.algoGroupBox.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -122,6 +153,7 @@ namespace WindowsFormsApp1
             this.tabControl1.AllowDrop = true;
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.ItemSize = new System.Drawing.Size(30, 100);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
@@ -129,7 +161,7 @@ namespace WindowsFormsApp1
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(856, 446);
+            this.tabControl1.Size = new System.Drawing.Size(845, 510);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl_DrawItem);
@@ -154,7 +186,7 @@ namespace WindowsFormsApp1
             this.tabPage2.Location = new System.Drawing.Point(104, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(748, 438);
+            this.tabPage2.Size = new System.Drawing.Size(737, 502);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Authentication";
             // 
@@ -163,11 +195,15 @@ namespace WindowsFormsApp1
             this.errorLabel.AutoSize = true;
             this.errorLabel.Location = new System.Drawing.Point(467, 165);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 20);
+            this.errorLabel.Size = new System.Drawing.Size(0, 16);
             this.errorLabel.TabIndex = 15;
             // 
             // resultGroupBox
             // 
+            this.resultGroupBox.Controls.Add(this.macLabel);
+            this.resultGroupBox.Controls.Add(this.macText);
+            this.resultGroupBox.Controls.Add(this.autnLabel);
+            this.resultGroupBox.Controls.Add(this.autnText);
             this.resultGroupBox.Controls.Add(this.akLabel);
             this.resultGroupBox.Controls.Add(this.ikLabel);
             this.resultGroupBox.Controls.Add(this.ckLabel);
@@ -184,9 +220,45 @@ namespace WindowsFormsApp1
             this.resultGroupBox.Controls.Add(this.sresText);
             this.resultGroupBox.Location = new System.Drawing.Point(32, 191);
             this.resultGroupBox.Name = "resultGroupBox";
-            this.resultGroupBox.Size = new System.Drawing.Size(660, 232);
+            this.resultGroupBox.Size = new System.Drawing.Size(694, 299);
             this.resultGroupBox.TabIndex = 14;
             this.resultGroupBox.TabStop = false;
+            // 
+            // macLabel
+            // 
+            this.macLabel.AutoSize = true;
+            this.macLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.macLabel.Location = new System.Drawing.Point(20, 229);
+            this.macLabel.Name = "macLabel";
+            this.macLabel.Size = new System.Drawing.Size(36, 16);
+            this.macLabel.TabIndex = 17;
+            this.macLabel.Text = "MAC";
+            // 
+            // macText
+            // 
+            this.macText.Location = new System.Drawing.Point(107, 223);
+            this.macText.Name = "macText";
+            this.macText.ReadOnly = true;
+            this.macText.Size = new System.Drawing.Size(352, 22);
+            this.macText.TabIndex = 16;
+            // 
+            // autnLabel
+            // 
+            this.autnLabel.AutoSize = true;
+            this.autnLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.autnLabel.Location = new System.Drawing.Point(20, 267);
+            this.autnLabel.Name = "autnLabel";
+            this.autnLabel.Size = new System.Drawing.Size(45, 16);
+            this.autnLabel.TabIndex = 15;
+            this.autnLabel.Text = "AUTN";
+            // 
+            // autnText
+            // 
+            this.autnText.Location = new System.Drawing.Point(106, 263);
+            this.autnText.Name = "autnText";
+            this.autnText.ReadOnly = true;
+            this.autnText.Size = new System.Drawing.Size(352, 22);
+            this.autnText.TabIndex = 14;
             // 
             // akLabel
             // 
@@ -260,58 +332,58 @@ namespace WindowsFormsApp1
             // 
             // akText
             // 
-            this.akText.Enabled = false;
             this.akText.Location = new System.Drawing.Point(107, 195);
             this.akText.Name = "akText";
-            this.akText.Size = new System.Drawing.Size(281, 22);
+            this.akText.ReadOnly = true;
+            this.akText.Size = new System.Drawing.Size(352, 22);
             this.akText.TabIndex = 6;
             // 
             // ikText
             // 
-            this.ikText.Enabled = false;
             this.ikText.Location = new System.Drawing.Point(107, 168);
             this.ikText.Name = "ikText";
-            this.ikText.Size = new System.Drawing.Size(281, 22);
+            this.ikText.ReadOnly = true;
+            this.ikText.Size = new System.Drawing.Size(352, 22);
             this.ikText.TabIndex = 5;
             // 
             // ckText
             // 
-            this.ckText.Enabled = false;
             this.ckText.Location = new System.Drawing.Point(107, 141);
             this.ckText.Name = "ckText";
-            this.ckText.Size = new System.Drawing.Size(281, 22);
+            this.ckText.ReadOnly = true;
+            this.ckText.Size = new System.Drawing.Size(352, 22);
             this.ckText.TabIndex = 4;
             // 
             // resText
             // 
-            this.resText.Enabled = false;
             this.resText.Location = new System.Drawing.Point(107, 115);
             this.resText.Name = "resText";
-            this.resText.Size = new System.Drawing.Size(281, 22);
+            this.resText.ReadOnly = true;
+            this.resText.Size = new System.Drawing.Size(353, 22);
             this.resText.TabIndex = 3;
             // 
             // opcText
             // 
-            this.opcText.Enabled = false;
             this.opcText.Location = new System.Drawing.Point(107, 89);
             this.opcText.Name = "opcText";
-            this.opcText.Size = new System.Drawing.Size(281, 22);
+            this.opcText.ReadOnly = true;
+            this.opcText.Size = new System.Drawing.Size(353, 22);
             this.opcText.TabIndex = 2;
             // 
             // kcText
             // 
-            this.kcText.Enabled = false;
             this.kcText.Location = new System.Drawing.Point(106, 50);
             this.kcText.Name = "kcText";
-            this.kcText.Size = new System.Drawing.Size(281, 22);
+            this.kcText.ReadOnly = true;
+            this.kcText.Size = new System.Drawing.Size(354, 22);
             this.kcText.TabIndex = 1;
             // 
             // sresText
             // 
-            this.sresText.Enabled = false;
             this.sresText.Location = new System.Drawing.Point(105, 24);
             this.sresText.Name = "sresText";
-            this.sresText.Size = new System.Drawing.Size(281, 22);
+            this.sresText.ReadOnly = true;
+            this.sresText.Size = new System.Drawing.Size(355, 22);
             this.sresText.TabIndex = 0;
             // 
             // algoGroupBox
@@ -463,7 +535,7 @@ namespace WindowsFormsApp1
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPage1.Size = new System.Drawing.Size(748, 438);
+            this.tabPage1.Size = new System.Drawing.Size(737, 502);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Convert To Scr";
             // 
@@ -476,11 +548,257 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 4;
             this.label2.Text = "Enter path of file to convert";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.opText2);
+            this.tabPage3.Controls.Add(this.macResultLabel);
+            this.tabPage3.Controls.Add(this.errLabel2);
+            this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Controls.Add(this.button4);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.randText2);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.kText2);
+            this.tabPage3.Controls.Add(this.autnLabel2);
+            this.tabPage3.Controls.Add(this.autnText2);
+            this.tabPage3.Location = new System.Drawing.Point(104, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(737, 502);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Verify Milenage";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(47, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 16);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "OP";
+            // 
+            // opText2
+            // 
+            this.opText2.Location = new System.Drawing.Point(134, 109);
+            this.opText2.MaxLength = 32;
+            this.opText2.Name = "opText2";
+            this.opText2.Size = new System.Drawing.Size(353, 22);
+            this.opText2.TabIndex = 30;
+            // 
+            // macResultLabel
+            // 
+            this.macResultLabel.AutoSize = true;
+            this.macResultLabel.Location = new System.Drawing.Point(137, 241);
+            this.macResultLabel.Name = "macResultLabel";
+            this.macResultLabel.Size = new System.Drawing.Size(0, 16);
+            this.macResultLabel.TabIndex = 16;
+            // 
+            // errLabel2
+            // 
+            this.errLabel2.AutoSize = true;
+            this.errLabel2.Location = new System.Drawing.Point(473, 144);
+            this.errLabel2.Name = "errLabel2";
+            this.errLabel2.Size = new System.Drawing.Size(0, 16);
+            this.errLabel2.TabIndex = 29;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.sqnText2);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.akText2);
+            this.groupBox1.Controls.Add(this.ikText2);
+            this.groupBox1.Controls.Add(this.ckText2);
+            this.groupBox1.Controls.Add(this.resText2);
+            this.groupBox1.Controls.Add(this.opcText2);
+            this.groupBox1.Location = new System.Drawing.Point(27, 211);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(694, 282);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(20, 222);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "SQN";
+            // 
+            // sqnText2
+            // 
+            this.sqnText2.Location = new System.Drawing.Point(106, 222);
+            this.sqnText2.Name = "sqnText2";
+            this.sqnText2.ReadOnly = true;
+            this.sqnText2.Size = new System.Drawing.Size(352, 22);
+            this.sqnText2.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(20, 175);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 16);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "AK";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(20, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 16);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "IK";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(20, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "CK";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(20, 95);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 16);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "RES";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(20, 69);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 16);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "OPC";
+            // 
+            // akText2
+            // 
+            this.akText2.Location = new System.Drawing.Point(107, 169);
+            this.akText2.Name = "akText2";
+            this.akText2.ReadOnly = true;
+            this.akText2.Size = new System.Drawing.Size(352, 22);
+            this.akText2.TabIndex = 6;
+            // 
+            // ikText2
+            // 
+            this.ikText2.Location = new System.Drawing.Point(107, 142);
+            this.ikText2.Name = "ikText2";
+            this.ikText2.ReadOnly = true;
+            this.ikText2.Size = new System.Drawing.Size(352, 22);
+            this.ikText2.TabIndex = 5;
+            // 
+            // ckText2
+            // 
+            this.ckText2.Location = new System.Drawing.Point(107, 115);
+            this.ckText2.Name = "ckText2";
+            this.ckText2.ReadOnly = true;
+            this.ckText2.Size = new System.Drawing.Size(352, 22);
+            this.ckText2.TabIndex = 4;
+            // 
+            // resText2
+            // 
+            this.resText2.Location = new System.Drawing.Point(107, 89);
+            this.resText2.Name = "resText2";
+            this.resText2.ReadOnly = true;
+            this.resText2.Size = new System.Drawing.Size(353, 22);
+            this.resText2.TabIndex = 3;
+            // 
+            // opcText2
+            // 
+            this.opcText2.Location = new System.Drawing.Point(107, 63);
+            this.opcText2.Name = "opcText2";
+            this.opcText2.ReadOnly = true;
+            this.opcText2.Size = new System.Drawing.Size(353, 22);
+            this.opcText2.TabIndex = 2;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(265, 144);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Verify";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(47, 79);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 16);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "RAND";
+            // 
+            // randText2
+            // 
+            this.randText2.Location = new System.Drawing.Point(134, 77);
+            this.randText2.MaxLength = 32;
+            this.randText2.Name = "randText2";
+            this.randText2.Size = new System.Drawing.Size(353, 22);
+            this.randText2.TabIndex = 21;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(47, 50);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 16);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "K";
+            // 
+            // kText2
+            // 
+            this.kText2.Location = new System.Drawing.Point(133, 46);
+            this.kText2.MaxLength = 32;
+            this.kText2.Name = "kText2";
+            this.kText2.Size = new System.Drawing.Size(353, 22);
+            this.kText2.TabIndex = 19;
+            // 
+            // autnLabel2
+            // 
+            this.autnLabel2.AutoSize = true;
+            this.autnLabel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.autnLabel2.Location = new System.Drawing.Point(46, 17);
+            this.autnLabel2.Name = "autnLabel2";
+            this.autnLabel2.Size = new System.Drawing.Size(45, 16);
+            this.autnLabel2.TabIndex = 18;
+            this.autnLabel2.Text = "AUTN";
+            // 
+            // autnText2
+            // 
+            this.autnText2.BackColor = System.Drawing.SystemColors.Window;
+            this.autnText2.Location = new System.Drawing.Point(133, 14);
+            this.autnText2.MaxLength = 32;
+            this.autnText2.Name = "autnText2";
+            this.autnText2.Size = new System.Drawing.Size(353, 22);
+            this.autnText2.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 481);
+            this.ClientSize = new System.Drawing.Size(874, 534);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -494,6 +812,10 @@ namespace WindowsFormsApp1
             this.algoGroupBox.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -539,6 +861,35 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label opcLabel;
         private System.Windows.Forms.Label kcLabel;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label autnLabel;
+        private System.Windows.Forms.TextBox autnText;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label errLabel2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox randText2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox kText2;
+        private System.Windows.Forms.Label autnLabel2;
+        private System.Windows.Forms.TextBox autnText2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox sqnText2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox akText2;
+        private System.Windows.Forms.TextBox ikText2;
+        private System.Windows.Forms.TextBox ckText2;
+        private System.Windows.Forms.TextBox resText2;
+        private System.Windows.Forms.TextBox opcText2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox opText2;
+        private System.Windows.Forms.Label macResultLabel;
+        private System.Windows.Forms.Label macLabel;
+        private System.Windows.Forms.TextBox macText;
     }
 }
 

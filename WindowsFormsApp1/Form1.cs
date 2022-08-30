@@ -128,6 +128,8 @@ namespace WindowsFormsApp1
                 ckLabel.ForeColor = Color.Black;
                 ikLabel.ForeColor = Color.Black;
                 akLabel.ForeColor = Color.Black;
+                autnLabel.ForeColor = Color.Black;
+                macLabel.ForeColor = Color.Black;
                 opText.Enabled = true;
                 amfText.Enabled = true;
                 sqnText.Enabled = true;
@@ -142,6 +144,7 @@ namespace WindowsFormsApp1
                 ckLabel.ForeColor = SystemColors.GrayText;
                 ikLabel.ForeColor = SystemColors.GrayText;
                 akLabel.ForeColor = SystemColors.GrayText;
+                autnLabel.ForeColor = SystemColors.GrayText;
             }
         }
         private static byte[] StringToByteArrayFastest(string hex)
@@ -185,7 +188,20 @@ namespace WindowsFormsApp1
 
                 byte[] random = StringToByteArrayFastest(randText.Text);
                 byte[] key = StringToByteArrayFastest(kText.Text);
+                byte[] sres = new byte[4];
+                byte[] kc = new byte[8];
 
+                comp128.algos_comp128v3(key, random, sres, kc);
+
+                sresText.Text = BitConverter.ToString(sres).Replace("-", "");
+                kcText.Text = BitConverter.ToString(kc).Replace("-", "");
+                resText.Text = "";
+                ckText.Text = "";
+                ikText.Text = "";
+                akText.Text = "";
+                opcText.Text = "";
+                macText.Text = "";
+                autnText.Text = "";
             }
             else // Milenage
             {
@@ -222,12 +238,38 @@ namespace WindowsFormsApp1
                 byte[] op = StringToByteArrayFastest(opText.Text);
                 byte[] sqn = StringToByteArrayFastest(sqnText.Text);
                 byte[] amf = StringToByteArrayFastest(amfText.Text);
-                byte[] iv = new byte[0x10];
-                
+                byte[] ck = new byte[0x10];
+                byte[] ik = new byte[0x10];
+                byte[] ak = new byte[0x06];
+                byte[] res = new byte[0x08];
+                byte[] autn = new byte[0x10];
+
                 Milenage.setOpc(op, key);
 
                 byte[] mac = Milenage.f1(key, random, sqn, amf);
-                resText.Text = BitConverter.ToString(mac).Replace("-", "");
+                Milenage.f2345(key, random, res, ck, ik, ak);
+                resText.Text = BitConverter.ToString(res).Replace("-", "");
+                ckText.Text = BitConverter.ToString(ck).Replace("-", "");
+                ikText.Text = BitConverter.ToString(ik).Replace("-", "");
+                akText.Text = BitConverter.ToString(ak).Replace("-", "");
+                opcText.Text = BitConverter.ToString(Milenage.opc).Replace("-", "");
+                macText.Text = BitConverter.ToString(mac).Replace("-", "");
+                for (byte i = 0; i < 6; i++)
+                {
+                    autn[i] = (byte)(sqn[i] ^ ak[i]);
+                }
+
+                autn[0x06] = amf[0];
+                autn[0x07] = amf[1];
+
+                for (byte i = 0; i < 8; i++)
+                {
+                    autn[i+0x08] = mac[i];
+                }
+                autnText.Text = BitConverter.ToString(autn).Replace("-", "");
+
+                sresText.Text = "";
+                kcText.Text = "";
             }
         }
 
@@ -277,6 +319,82 @@ namespace WindowsFormsApp1
             hexKeyOnly(e);
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            errLabel2.Text = "";
+
+            if (autnText2.TextLength != 32)
+            {
+                errLabel2.Text = "Invalid length of AUTN, must be 16 bytes";
+                return;
+            }
+            else if (kText2.TextLength != 32)
+            {
+                errLabel2.Text = "Invalid length of K, must be 16 bytes";
+                return;
+
+            }
+            else if (randText2.TextLength != 32)
+            {
+                errLabel2.Text = "Invalid length of RAND, must be 16 bytes";
+                return;
+            }
+            else if (opText2.TextLength != 32)
+            {
+                errLabel2.Text = "Invalid length of OP, must be 16 bytes";
+                return;
+            }
+
+            byte[] random = StringToByteArrayFastest(randText2.Text);
+            byte[] key = StringToByteArrayFastest(kText2.Text);
+            byte[] op = StringToByteArrayFastest(opText2.Text);
+            byte[] autn = StringToByteArrayFastest(autnText2.Text);
+            byte[] amf = new byte[0x02];
+            byte[] ck = new byte[0x10];
+            byte[] ik = new byte[0x10];
+            byte[] ak = new byte[0x06];
+            byte[] res = new byte[0x08];
+            byte[] sqn = new byte[0x06];
+
+            Milenage.setOpc(op, key);
+
+            Milenage.f2345(key, random, res, ck, ik, ak);
+
+            for(byte i = 0; i < 0x06; i++)
+            {
+                sqn[i] = (byte)(autn[i] ^ ak[i]);
+            }
+            amf[0] = autn[0x06];
+            amf[1] = autn[0x07];
+            byte[] mac = Milenage.f1(key, random, sqn, amf);
+
+            for(byte i = 0; i < 0x08; i++)
+            {
+                if (mac[i] != autn[0x08 + i])
+                {
+                    macResultLabel.ForeColor = Color.Red;
+                    macResultLabel.Text = "MAC Verification Failed, calcuated one is " + BitConverter.ToString(mac).Replace("-", "");
+                    resText2.Text = "";
+                    ckText2.Text = "";
+                    ikText2.Text = "";
+                    akText2.Text = "";
+                    opcText2.Text = "";
+                    sqnText2.Text = "";
+                    return;
+                }
+            }
+
+            macResultLabel.ForeColor = Color.Green;
+            macResultLabel.Text = "MAC Verification Passed";
+
+
+            resText2.Text = BitConverter.ToString(res).Replace("-", "");
+            ckText2.Text = BitConverter.ToString(ck).Replace("-", "");
+            ikText2.Text = BitConverter.ToString(ik).Replace("-", "");
+            akText2.Text = BitConverter.ToString(ak).Replace("-", "");
+            opcText2.Text = BitConverter.ToString(Milenage.opc).Replace("-", "");
+            sqnText2.Text = BitConverter.ToString(sqn).Replace("-", "");
+        }
 
     }
 }
