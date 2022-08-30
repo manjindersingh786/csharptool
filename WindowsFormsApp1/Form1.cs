@@ -111,6 +111,7 @@ namespace WindowsFormsApp1
                 opLabel.ForeColor = SystemColors.GrayText;
                 sqnLabel.ForeColor = SystemColors.GrayText;
                 amfLabel.ForeColor = SystemColors.GrayText;
+                macLabel.ForeColor = SystemColors.GrayText;
             }
             else
             {
