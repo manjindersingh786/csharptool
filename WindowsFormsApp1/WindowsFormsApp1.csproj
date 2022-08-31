@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PCSC">
+      <HintPath>.\PCSC.dll</HintPath>
+    </Reference>
+    <Reference Include="PCSC.Iso7816">
+      <HintPath>.\PCSC.Iso7816.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardTool.cs" />
     <Compile Include="comp128.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
