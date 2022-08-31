@@ -397,5 +397,49 @@ namespace WindowsFormsApp1
             sqnText2.Text = BitConverter.ToString(sqn).Replace("-", "");
         }
 
+        private void opText_TextChanged(object sender, EventArgs e)
+        {
+            countOpLabel.Text = (opText.TextLength / 2).ToString() + " b" ;
+        }
+
+        private void kText_TextChanged(object sender, EventArgs e)
+        {
+            countKLabel.Text = (kText.TextLength / 2).ToString() + " b" ;
+        }
+
+        private void randText_TextChanged(object sender, EventArgs e)
+        {
+            countRandLabel.Text = (randText.TextLength / 2).ToString() + " b" ;
+        }
+
+        private void sqnText_TextChanged(object sender, EventArgs e)
+        {
+            countSqnLabel.Text = (sqnText.TextLength / 2).ToString() + " b" ;
+        }
+
+        private void amfText_TextChanged(object sender, EventArgs e)
+        {
+            countAmfLabel.Text = (amfText.TextLength / 2).ToString() + " b" ;
+        }
+
+        private void autnText2_TextChanged(object sender, EventArgs e)
+        {
+            countAutnLabel.Text = (autnText2.TextLength / 2).ToString() + " b";
+        }
+
+        private void kText2_TextChanged(object sender, EventArgs e)
+        {
+            countKLabel2.Text = (kText2.TextLength / 2).ToString() + " b";
+        }
+
+        private void randText2_TextChanged(object sender, EventArgs e)
+        {
+            countRandLabel2.Text = (randText2.TextLength / 2).ToString() + " b";
+        }
+
+        private void opText2_TextChanged(object sender, EventArgs e)
+        {
+            countOpLabel2.Text = (opText2.TextLength / 2).ToString() + " b";
+        }
     }
 }

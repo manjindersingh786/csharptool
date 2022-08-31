@@ -141,11 +141,15 @@ extern void f1star(u8 k[16], u8 rand[16], u8 sqn[6], u8 amf[2],
 	u8 mac_s[8]);
 extern void f5star(u8 k[16], u8 rand[16],
 	u8 ak[6]);
+
+typedef u8 uint8_t;
 extern void ComputeOPc(u8 op_c[16]);
 extern void RijndaelKeySchedule(u8 key[16]);
 extern void RijndaelEncrypt(u8 input[16], u8 output[16]);
 extern void setOp(u8 input[16]);
 extern void findXor(u8 l1[], u8 l2[], u8 l3[], short len);
+extern void comp128v23(u8* sres, u8* kc, u8 const* ki, u8 const* rand, u8 v2);
+extern void comp128v1(uint8_t* sres, uint8_t* kc, uint8_t const* ki, uint8_t const* rand);
 void printArray(const u8* array, short len) {
 
 	short index = 0;
@@ -230,7 +234,9 @@ int main()
 #endif
 #if 1
 	/*GSM comp128v3*/
-		algos_comp128v3(key, RAND, res, ck);		
+		//algos_comp128v3(key, RAND, res, ck);
+		comp128v23(res, ck, key, RAND, 0x01);
+		//comp128v1(res, ck, key, RAND);
 		printf("SRES\n");
 		printArray(res, 4);
 

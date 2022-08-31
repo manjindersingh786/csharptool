@@ -72,6 +72,7 @@ namespace WindowsFormsApp1
             this.opLabel = new System.Windows.Forms.Label();
             this.opText = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -98,6 +99,15 @@ namespace WindowsFormsApp1
             this.kText2 = new System.Windows.Forms.TextBox();
             this.autnLabel2 = new System.Windows.Forms.Label();
             this.autnText2 = new System.Windows.Forms.TextBox();
+            this.countOpLabel = new System.Windows.Forms.Label();
+            this.countKLabel = new System.Windows.Forms.Label();
+            this.countRandLabel = new System.Windows.Forms.Label();
+            this.countSqnLabel = new System.Windows.Forms.Label();
+            this.countAmfLabel = new System.Windows.Forms.Label();
+            this.countAutnLabel = new System.Windows.Forms.Label();
+            this.countKLabel2 = new System.Windows.Forms.Label();
+            this.countRandLabel2 = new System.Windows.Forms.Label();
+            this.countOpLabel2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.resultGroupBox.SuspendLayout();
@@ -169,6 +179,11 @@ namespace WindowsFormsApp1
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.countAmfLabel);
+            this.tabPage2.Controls.Add(this.countSqnLabel);
+            this.tabPage2.Controls.Add(this.countRandLabel);
+            this.tabPage2.Controls.Add(this.countKLabel);
+            this.tabPage2.Controls.Add(this.countOpLabel);
             this.tabPage2.Controls.Add(this.errorLabel);
             this.tabPage2.Controls.Add(this.resultGroupBox);
             this.tabPage2.Controls.Add(this.algoGroupBox);
@@ -390,7 +405,7 @@ namespace WindowsFormsApp1
             // 
             this.algoGroupBox.Controls.Add(this.compRadioButton);
             this.algoGroupBox.Controls.Add(this.milenageRadioButton);
-            this.algoGroupBox.Location = new System.Drawing.Point(543, 9);
+            this.algoGroupBox.Location = new System.Drawing.Point(569, 9);
             this.algoGroupBox.Name = "algoGroupBox";
             this.algoGroupBox.Size = new System.Drawing.Size(149, 83);
             this.algoGroupBox.TabIndex = 13;
@@ -449,6 +464,7 @@ namespace WindowsFormsApp1
             this.amfText.Name = "amfText";
             this.amfText.Size = new System.Drawing.Size(87, 22);
             this.amfText.TabIndex = 9;
+            this.amfText.TextChanged += new System.EventHandler(this.amfText_TextChanged);
             // 
             // sqnLabel
             // 
@@ -468,6 +484,7 @@ namespace WindowsFormsApp1
             this.sqnText.Name = "sqnText";
             this.sqnText.Size = new System.Drawing.Size(207, 22);
             this.sqnText.TabIndex = 7;
+            this.sqnText.TextChanged += new System.EventHandler(this.sqnText_TextChanged);
             // 
             // randLabel
             // 
@@ -485,6 +502,7 @@ namespace WindowsFormsApp1
             this.randText.Name = "randText";
             this.randText.Size = new System.Drawing.Size(353, 22);
             this.randText.TabIndex = 5;
+            this.randText.TextChanged += new System.EventHandler(this.randText_TextChanged);
             // 
             // kLabel
             // 
@@ -502,6 +520,7 @@ namespace WindowsFormsApp1
             this.kText.Name = "kText";
             this.kText.Size = new System.Drawing.Size(353, 22);
             this.kText.TabIndex = 3;
+            this.kText.TextChanged += new System.EventHandler(this.kText_TextChanged);
             // 
             // opLabel
             // 
@@ -522,10 +541,12 @@ namespace WindowsFormsApp1
             this.opText.Name = "opText";
             this.opText.Size = new System.Drawing.Size(353, 22);
             this.opText.TabIndex = 1;
+            this.opText.TextChanged += new System.EventHandler(this.opText_TextChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.hScrollBar1);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label1);
@@ -539,6 +560,13 @@ namespace WindowsFormsApp1
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Convert To Scr";
             // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(18, 43);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(8, 8);
+            this.hScrollBar1.TabIndex = 5;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -551,6 +579,10 @@ namespace WindowsFormsApp1
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage3.Controls.Add(this.countOpLabel2);
+            this.tabPage3.Controls.Add(this.countRandLabel2);
+            this.tabPage3.Controls.Add(this.countKLabel2);
+            this.tabPage3.Controls.Add(this.countAutnLabel);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.opText2);
             this.tabPage3.Controls.Add(this.macResultLabel);
@@ -586,6 +618,7 @@ namespace WindowsFormsApp1
             this.opText2.Name = "opText2";
             this.opText2.Size = new System.Drawing.Size(353, 22);
             this.opText2.TabIndex = 30;
+            this.opText2.TextChanged += new System.EventHandler(this.opText2_TextChanged);
             // 
             // macResultLabel
             // 
@@ -757,6 +790,7 @@ namespace WindowsFormsApp1
             this.randText2.Name = "randText2";
             this.randText2.Size = new System.Drawing.Size(353, 22);
             this.randText2.TabIndex = 21;
+            this.randText2.TextChanged += new System.EventHandler(this.randText2_TextChanged);
             // 
             // label15
             // 
@@ -774,6 +808,7 @@ namespace WindowsFormsApp1
             this.kText2.Name = "kText2";
             this.kText2.Size = new System.Drawing.Size(353, 22);
             this.kText2.TabIndex = 19;
+            this.kText2.TextChanged += new System.EventHandler(this.kText2_TextChanged);
             // 
             // autnLabel2
             // 
@@ -793,16 +828,98 @@ namespace WindowsFormsApp1
             this.autnText2.Name = "autnText2";
             this.autnText2.Size = new System.Drawing.Size(353, 22);
             this.autnText2.TabIndex = 17;
+            this.autnText2.TextChanged += new System.EventHandler(this.autnText2_TextChanged);
+            // 
+            // countOpLabel
+            // 
+            this.countOpLabel.AutoSize = true;
+            this.countOpLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countOpLabel.Location = new System.Drawing.Point(505, 11);
+            this.countOpLabel.Name = "countOpLabel";
+            this.countOpLabel.Size = new System.Drawing.Size(0, 16);
+            this.countOpLabel.TabIndex = 16;
+            // 
+            // countKLabel
+            // 
+            this.countKLabel.AutoSize = true;
+            this.countKLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countKLabel.Location = new System.Drawing.Point(505, 43);
+            this.countKLabel.Name = "countKLabel";
+            this.countKLabel.Size = new System.Drawing.Size(0, 20);
+            this.countKLabel.TabIndex = 17;
+            // 
+            // countRandLabel
+            // 
+            this.countRandLabel.AutoSize = true;
+            this.countRandLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countRandLabel.Location = new System.Drawing.Point(508, 73);
+            this.countRandLabel.Name = "countRandLabel";
+            this.countRandLabel.Size = new System.Drawing.Size(0, 20);
+            this.countRandLabel.TabIndex = 18;
+            // 
+            // countSqnLabel
+            // 
+            this.countSqnLabel.AutoSize = true;
+            this.countSqnLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countSqnLabel.Location = new System.Drawing.Point(360, 103);
+            this.countSqnLabel.Name = "countSqnLabel";
+            this.countSqnLabel.Size = new System.Drawing.Size(0, 20);
+            this.countSqnLabel.TabIndex = 19;
+            // 
+            // countAmfLabel
+            // 
+            this.countAmfLabel.AutoSize = true;
+            this.countAmfLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countAmfLabel.Location = new System.Drawing.Point(241, 136);
+            this.countAmfLabel.Name = "countAmfLabel";
+            this.countAmfLabel.Size = new System.Drawing.Size(0, 20);
+            this.countAmfLabel.TabIndex = 20;
+            // 
+            // countAutnLabel
+            // 
+            this.countAutnLabel.AutoSize = true;
+            this.countAutnLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countAutnLabel.Location = new System.Drawing.Point(494, 18);
+            this.countAutnLabel.Name = "countAutnLabel";
+            this.countAutnLabel.Size = new System.Drawing.Size(0, 20);
+            this.countAutnLabel.TabIndex = 32;
+            // 
+            // countKLabel2
+            // 
+            this.countKLabel2.AutoSize = true;
+            this.countKLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countKLabel2.Location = new System.Drawing.Point(493, 51);
+            this.countKLabel2.Name = "countKLabel2";
+            this.countKLabel2.Size = new System.Drawing.Size(0, 20);
+            this.countKLabel2.TabIndex = 33;
+            // 
+            // countRandLabel2
+            // 
+            this.countRandLabel2.AutoSize = true;
+            this.countRandLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countRandLabel2.Location = new System.Drawing.Point(496, 81);
+            this.countRandLabel2.Name = "countRandLabel2";
+            this.countRandLabel2.Size = new System.Drawing.Size(0, 20);
+            this.countRandLabel2.TabIndex = 34;
+            // 
+            // countOpLabel2
+            // 
+            this.countOpLabel2.AutoSize = true;
+            this.countOpLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countOpLabel2.Location = new System.Drawing.Point(497, 114);
+            this.countOpLabel2.Name = "countOpLabel2";
+            this.countOpLabel2.Size = new System.Drawing.Size(0, 20);
+            this.countOpLabel2.TabIndex = 35;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 534);
+            this.ClientSize = new System.Drawing.Size(877, 534);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "ConvertToScr";
+            this.Text = "Authtool";
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -890,6 +1007,16 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label macResultLabel;
         private System.Windows.Forms.Label macLabel;
         private System.Windows.Forms.TextBox macText;
+        private System.Windows.Forms.HScrollBar hScrollBar1;
+        private System.Windows.Forms.Label countAmfLabel;
+        private System.Windows.Forms.Label countSqnLabel;
+        private System.Windows.Forms.Label countRandLabel;
+        private System.Windows.Forms.Label countKLabel;
+        private System.Windows.Forms.Label countOpLabel;
+        private System.Windows.Forms.Label countOpLabel2;
+        private System.Windows.Forms.Label countRandLabel2;
+        private System.Windows.Forms.Label countKLabel2;
+        private System.Windows.Forms.Label countAutnLabel;
     }
 }
 

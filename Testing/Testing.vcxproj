@@ -140,9 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="comp128.c" />
+    <ClCompile Include="comp128_.c" />
     <ClCompile Include="Milenage.c" />
     <ClCompile Include="Rijndael.c" />
     <ClCompile Include="Testing.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="comp128_.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

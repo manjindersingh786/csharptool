@@ -27,5 +27,13 @@
     <ClCompile Include="comp128.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="comp128_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="comp128_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
