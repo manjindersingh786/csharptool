@@ -10,6 +10,7 @@ namespace WindowsFormsApp1
     {
         public Form1()
         {
+            CardTool.establishConnection();
             InitializeComponent();
         }
 
@@ -283,6 +284,8 @@ namespace WindowsFormsApp1
                     (c >= 'A' && c <= 'F') 
                     || 
                     (c >= 'a' && c <= 'f')
+                    ||
+                    Char.IsControl(c)
                   )
                )
             {
@@ -440,6 +443,153 @@ namespace WindowsFormsApp1
         private void opText2_TextChanged(object sender, EventArgs e)
         {
             countOpLabel2.Text = (opText2.TextLength / 2).ToString() + " b";
+        }
+         private void OpText2_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            hexKeyOnly(e);
+        }
+        
+        private void RandText2_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            hexKeyOnly(e);
+        }
+
+        private void KText2_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            hexKeyOnly(e);
+        }
+
+        private void AutnText2_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            hexKeyOnly(e);
+        }
+        
+        private void ReadersComboBox_DropDown(object sender, System.EventArgs e)
+        {
+            //Clean the previous data
+            readersComboBox.Items.Clear();
+
+            //Get list of new readers connected right now
+            var readers= CardTool.listOfreaders();
+
+            //traverse each reader name one by one
+            foreach(string var in readers)
+            {
+                //Add reader name in list
+                readersComboBox.Items.Add(var);
+            }
+        }
+
+        private void commandTextBox_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            hexKeyOnly(e);
+        }
+        private void printLineInLog(string str, Color clr)
+        {
+            LogTextBox.SelectionLength = 0;
+            LogTextBox.SelectionStart = LogTextBox.TextLength;
+            LogTextBox.SelectionColor = clr;
+
+
+            LogTextBox.AppendText(str);
+            LogTextBox.SelectionColor = LogTextBox.ForeColor;
+            LogTextBox.AppendText(Environment.NewLine);
+        }
+        private void printCmdLineInLog(string str)
+        {
+            LogTextBox.AppendText("<- ");
+            printLineInLog(str, Color.DarkOrange);
+        }
+
+        private void printRspLineInLog(string str)
+        {
+            LogTextBox.AppendText("-> ");
+            printLineInLog(str, Color.Green);
+        }
+
+        private void printErrorLineInLog(string str)
+        {
+            LogTextBox.AppendText("");
+            printLineInLog(str, Color.Green);
+        }
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //Select card reader
+                CardTool.setReader(readersComboBox.Text);
+            }catch(Exception ex)
+            {
+                LogTextBox.Text = ex.Message;
+                return;
+            }
+
+            //Append command
+            LogTextBox.AppendText("<- ");
+            printLineInLog("Reset", Color.Blue);
+            
+            //Reset the card reader
+            var atr = CardTool.ResetCard();
+
+            //append the response in log
+            printRspLineInLog(atr);
+
+        }
+
+        private void sendCommandButton_Click(object sender, EventArgs e)
+        {
+            byte[][] commands = new byte[commandTextBox.Lines.Length][];
+            byte[] responseBuffer;
+            int i = 0;
+            foreach(var command in commandTextBox.Lines)
+            {
+                if(10 > command.Length)
+                {
+                    printLineInLog("Complete command header missing in command no. " + (i + 1).ToString(), Color.Red);
+                    return;
+                }
+
+                commands[i] = StringToByteArrayFastest(command);
+                
+                if ((commands[i].Length > 5) && (commands[i][4] != (commands[i].Length - 5)))
+                {
+                    printLineInLog("Complete command header missing in command no. " + (i + 1).ToString(), Color.Red);
+                    return;
+                }
+                i++;
+            }
+
+            for (i = 0; i < commands.Length; i++)
+            {
+                printCmdLineInLog(BitConverter.ToString(commands[i]).Replace("-","  "));
+                try
+                {
+                    responseBuffer = CardTool.sendCommand(commands[i]);
+                }catch(Exception ex)
+                {
+                    printLineInLog(ex.Message, Color.Red);
+                    return;
+                }
+                
+
+                if(responseBuffer.Length > 2)
+                {
+                    var remLength = responseBuffer.Length - 2;
+                    int startIndex = 0;
+                    var rowLength = 16;
+                    while (remLength > rowLength)
+                    {
+                        printRspLineInLog(BitConverter.ToString(responseBuffer, startIndex, rowLength).Replace("-", "\t"));
+                        remLength -= rowLength;
+                        startIndex += rowLength;
+                    }
+
+                    printRspLineInLog(BitConverter.ToString(responseBuffer, startIndex, remLength).Replace("-", "\t"));
+                }
+                
+                printRspLineInLog("SW: "+ BitConverter.ToString(responseBuffer, 0, 0x02).Replace("-", " "));
+            }
         }
     }
 }

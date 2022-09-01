@@ -37,6 +37,11 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.countAmfLabel = new System.Windows.Forms.Label();
+            this.countSqnLabel = new System.Windows.Forms.Label();
+            this.countRandLabel = new System.Windows.Forms.Label();
+            this.countKLabel = new System.Windows.Forms.Label();
+            this.countOpLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
             this.resultGroupBox = new System.Windows.Forms.GroupBox();
             this.macLabel = new System.Windows.Forms.Label();
@@ -71,10 +76,11 @@ namespace WindowsFormsApp1
             this.kText = new System.Windows.Forms.TextBox();
             this.opLabel = new System.Windows.Forms.Label();
             this.opText = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.countOpLabel2 = new System.Windows.Forms.Label();
+            this.countRandLabel2 = new System.Windows.Forms.Label();
+            this.countKLabel2 = new System.Windows.Forms.Label();
+            this.countAutnLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.opText2 = new System.Windows.Forms.TextBox();
             this.macResultLabel = new System.Windows.Forms.Label();
@@ -99,22 +105,26 @@ namespace WindowsFormsApp1
             this.kText2 = new System.Windows.Forms.TextBox();
             this.autnLabel2 = new System.Windows.Forms.Label();
             this.autnText2 = new System.Windows.Forms.TextBox();
-            this.countOpLabel = new System.Windows.Forms.Label();
-            this.countKLabel = new System.Windows.Forms.Label();
-            this.countRandLabel = new System.Windows.Forms.Label();
-            this.countSqnLabel = new System.Windows.Forms.Label();
-            this.countAmfLabel = new System.Windows.Forms.Label();
-            this.countAutnLabel = new System.Windows.Forms.Label();
-            this.countKLabel2 = new System.Windows.Forms.Label();
-            this.countRandLabel2 = new System.Windows.Forms.Label();
-            this.countOpLabel2 = new System.Windows.Forms.Label();
+            this.cardPlayerTabPage = new System.Windows.Forms.TabPage();
+            this.LogTextBox = new System.Windows.Forms.RichTextBox();
+            this.sendCommandButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.commandTextBox = new System.Windows.Forms.TextBox();
+            this.cmdLabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.readersComboBox = new System.Windows.Forms.ComboBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.resultGroupBox.SuspendLayout();
             this.algoGroupBox.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.cardPlayerTabPage.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -162,8 +172,9 @@ namespace WindowsFormsApp1
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControl1.AllowDrop = true;
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.cardPlayerTabPage);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.ItemSize = new System.Drawing.Size(30, 100);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
@@ -171,7 +182,7 @@ namespace WindowsFormsApp1
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(845, 510);
+            this.tabControl1.Size = new System.Drawing.Size(1227, 656);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl_DrawItem);
@@ -201,9 +212,59 @@ namespace WindowsFormsApp1
             this.tabPage2.Location = new System.Drawing.Point(104, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(737, 502);
+            this.tabPage2.Size = new System.Drawing.Size(765, 533);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Authentication";
+            // 
+            // countAmfLabel
+            // 
+            this.countAmfLabel.AutoSize = true;
+            this.countAmfLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countAmfLabel.Location = new System.Drawing.Point(241, 136);
+            this.countAmfLabel.Name = "countAmfLabel";
+            this.countAmfLabel.Size = new System.Drawing.Size(25, 16);
+            this.countAmfLabel.TabIndex = 20;
+            this.countAmfLabel.Text = "0 b";
+            // 
+            // countSqnLabel
+            // 
+            this.countSqnLabel.AutoSize = true;
+            this.countSqnLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countSqnLabel.Location = new System.Drawing.Point(360, 103);
+            this.countSqnLabel.Name = "countSqnLabel";
+            this.countSqnLabel.Size = new System.Drawing.Size(25, 16);
+            this.countSqnLabel.TabIndex = 19;
+            this.countSqnLabel.Text = "0 b";
+            // 
+            // countRandLabel
+            // 
+            this.countRandLabel.AutoSize = true;
+            this.countRandLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countRandLabel.Location = new System.Drawing.Point(506, 73);
+            this.countRandLabel.Name = "countRandLabel";
+            this.countRandLabel.Size = new System.Drawing.Size(25, 16);
+            this.countRandLabel.TabIndex = 18;
+            this.countRandLabel.Text = "0 b";
+            // 
+            // countKLabel
+            // 
+            this.countKLabel.AutoSize = true;
+            this.countKLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countKLabel.Location = new System.Drawing.Point(505, 43);
+            this.countKLabel.Name = "countKLabel";
+            this.countKLabel.Size = new System.Drawing.Size(25, 16);
+            this.countKLabel.TabIndex = 17;
+            this.countKLabel.Text = "0 b";
+            // 
+            // countOpLabel
+            // 
+            this.countOpLabel.AutoSize = true;
+            this.countOpLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countOpLabel.Location = new System.Drawing.Point(505, 11);
+            this.countOpLabel.Name = "countOpLabel";
+            this.countOpLabel.Size = new System.Drawing.Size(25, 16);
+            this.countOpLabel.TabIndex = 16;
+            this.countOpLabel.Text = "0 b";
             // 
             // errorLabel
             // 
@@ -465,6 +526,7 @@ namespace WindowsFormsApp1
             this.amfText.Size = new System.Drawing.Size(87, 22);
             this.amfText.TabIndex = 9;
             this.amfText.TextChanged += new System.EventHandler(this.amfText_TextChanged);
+            this.amfText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmfText_KeyPress);
             // 
             // sqnLabel
             // 
@@ -485,6 +547,7 @@ namespace WindowsFormsApp1
             this.sqnText.Size = new System.Drawing.Size(207, 22);
             this.sqnText.TabIndex = 7;
             this.sqnText.TextChanged += new System.EventHandler(this.sqnText_TextChanged);
+            this.sqnText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SqnText_KeyPress);
             // 
             // randLabel
             // 
@@ -503,6 +566,7 @@ namespace WindowsFormsApp1
             this.randText.Size = new System.Drawing.Size(353, 22);
             this.randText.TabIndex = 5;
             this.randText.TextChanged += new System.EventHandler(this.randText_TextChanged);
+            this.randText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RandText_KeyPress);
             // 
             // kLabel
             // 
@@ -521,6 +585,7 @@ namespace WindowsFormsApp1
             this.kText.Size = new System.Drawing.Size(353, 22);
             this.kText.TabIndex = 3;
             this.kText.TextChanged += new System.EventHandler(this.kText_TextChanged);
+            this.kText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KText_KeyPress);
             // 
             // opLabel
             // 
@@ -542,39 +607,7 @@ namespace WindowsFormsApp1
             this.opText.Size = new System.Drawing.Size(353, 22);
             this.opText.TabIndex = 1;
             this.opText.TextChanged += new System.EventHandler(this.opText_TextChanged);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.hScrollBar1);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Location = new System.Drawing.Point(104, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPage1.Size = new System.Drawing.Size(737, 502);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Convert To Scr";
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(18, 43);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(8, 8);
-            this.hScrollBar1.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Enter path of file to convert";
+            this.opText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OpText_KeyPress);
             // 
             // tabPage3
             // 
@@ -598,9 +631,49 @@ namespace WindowsFormsApp1
             this.tabPage3.Location = new System.Drawing.Point(104, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(737, 502);
+            this.tabPage3.Size = new System.Drawing.Size(765, 533);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Verify Milenage";
+            // 
+            // countOpLabel2
+            // 
+            this.countOpLabel2.AutoSize = true;
+            this.countOpLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countOpLabel2.Location = new System.Drawing.Point(494, 114);
+            this.countOpLabel2.Name = "countOpLabel2";
+            this.countOpLabel2.Size = new System.Drawing.Size(25, 16);
+            this.countOpLabel2.TabIndex = 35;
+            this.countOpLabel2.Text = "0 b";
+            // 
+            // countRandLabel2
+            // 
+            this.countRandLabel2.AutoSize = true;
+            this.countRandLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countRandLabel2.Location = new System.Drawing.Point(494, 81);
+            this.countRandLabel2.Name = "countRandLabel2";
+            this.countRandLabel2.Size = new System.Drawing.Size(25, 16);
+            this.countRandLabel2.TabIndex = 34;
+            this.countRandLabel2.Text = "0 b";
+            // 
+            // countKLabel2
+            // 
+            this.countKLabel2.AutoSize = true;
+            this.countKLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countKLabel2.Location = new System.Drawing.Point(493, 51);
+            this.countKLabel2.Name = "countKLabel2";
+            this.countKLabel2.Size = new System.Drawing.Size(25, 16);
+            this.countKLabel2.TabIndex = 33;
+            this.countKLabel2.Text = "0 b";
+            // 
+            // countAutnLabel
+            // 
+            this.countAutnLabel.AutoSize = true;
+            this.countAutnLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.countAutnLabel.Location = new System.Drawing.Point(494, 18);
+            this.countAutnLabel.Name = "countAutnLabel";
+            this.countAutnLabel.Size = new System.Drawing.Size(25, 16);
+            this.countAutnLabel.TabIndex = 32;
+            this.countAutnLabel.Text = "0 b";
             // 
             // label3
             // 
@@ -619,6 +692,7 @@ namespace WindowsFormsApp1
             this.opText2.Size = new System.Drawing.Size(353, 22);
             this.opText2.TabIndex = 30;
             this.opText2.TextChanged += new System.EventHandler(this.opText2_TextChanged);
+            this.opText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OpText2_KeyPress);
             // 
             // macResultLabel
             // 
@@ -791,6 +865,7 @@ namespace WindowsFormsApp1
             this.randText2.Size = new System.Drawing.Size(353, 22);
             this.randText2.TabIndex = 21;
             this.randText2.TextChanged += new System.EventHandler(this.randText2_TextChanged);
+            this.randText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RandText2_KeyPress);
             // 
             // label15
             // 
@@ -809,6 +884,7 @@ namespace WindowsFormsApp1
             this.kText2.Size = new System.Drawing.Size(353, 22);
             this.kText2.TabIndex = 19;
             this.kText2.TextChanged += new System.EventHandler(this.kText2_TextChanged);
+            this.kText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KText2_KeyPress);
             // 
             // autnLabel2
             // 
@@ -829,93 +905,140 @@ namespace WindowsFormsApp1
             this.autnText2.Size = new System.Drawing.Size(353, 22);
             this.autnText2.TabIndex = 17;
             this.autnText2.TextChanged += new System.EventHandler(this.autnText2_TextChanged);
+            this.autnText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AutnText2_KeyPress);
             // 
-            // countOpLabel
+            // cardPlayerTabPage
             // 
-            this.countOpLabel.AutoSize = true;
-            this.countOpLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countOpLabel.Location = new System.Drawing.Point(505, 11);
-            this.countOpLabel.Name = "countOpLabel";
-            this.countOpLabel.Size = new System.Drawing.Size(0, 16);
-            this.countOpLabel.TabIndex = 16;
+            this.cardPlayerTabPage.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cardPlayerTabPage.Controls.Add(this.LogTextBox);
+            this.cardPlayerTabPage.Controls.Add(this.sendCommandButton);
+            this.cardPlayerTabPage.Controls.Add(this.resetButton);
+            this.cardPlayerTabPage.Controls.Add(this.label11);
+            this.cardPlayerTabPage.Controls.Add(this.commandTextBox);
+            this.cardPlayerTabPage.Controls.Add(this.cmdLabel);
+            this.cardPlayerTabPage.Controls.Add(this.label10);
+            this.cardPlayerTabPage.Controls.Add(this.readersComboBox);
+            this.cardPlayerTabPage.Location = new System.Drawing.Point(104, 4);
+            this.cardPlayerTabPage.Name = "cardPlayerTabPage";
+            this.cardPlayerTabPage.Size = new System.Drawing.Size(1119, 648);
+            this.cardPlayerTabPage.TabIndex = 3;
+            this.cardPlayerTabPage.Text = "Card Player";
             // 
-            // countKLabel
+            // LogTextBox
             // 
-            this.countKLabel.AutoSize = true;
-            this.countKLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countKLabel.Location = new System.Drawing.Point(505, 43);
-            this.countKLabel.Name = "countKLabel";
-            this.countKLabel.Size = new System.Drawing.Size(0, 20);
-            this.countKLabel.TabIndex = 17;
+            this.LogTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogTextBox.Location = new System.Drawing.Point(54, 307);
+            this.LogTextBox.Name = "LogTextBox";
+            this.LogTextBox.ReadOnly = true;
+            this.LogTextBox.Size = new System.Drawing.Size(1011, 291);
+            this.LogTextBox.TabIndex = 26;
+            this.LogTextBox.Text = "";
             // 
-            // countRandLabel
+            // sendCommandButton
             // 
-            this.countRandLabel.AutoSize = true;
-            this.countRandLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countRandLabel.Location = new System.Drawing.Point(508, 73);
-            this.countRandLabel.Name = "countRandLabel";
-            this.countRandLabel.Size = new System.Drawing.Size(0, 20);
-            this.countRandLabel.TabIndex = 18;
+            this.sendCommandButton.Location = new System.Drawing.Point(270, 61);
+            this.sendCommandButton.Name = "sendCommandButton";
+            this.sendCommandButton.Size = new System.Drawing.Size(126, 23);
+            this.sendCommandButton.TabIndex = 25;
+            this.sendCommandButton.Text = "Send Command";
+            this.sendCommandButton.UseVisualStyleBackColor = true;
+            this.sendCommandButton.Click += new System.EventHandler(this.sendCommandButton_Click);
             // 
-            // countSqnLabel
+            // resetButton
             // 
-            this.countSqnLabel.AutoSize = true;
-            this.countSqnLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countSqnLabel.Location = new System.Drawing.Point(360, 103);
-            this.countSqnLabel.Name = "countSqnLabel";
-            this.countSqnLabel.Size = new System.Drawing.Size(0, 20);
-            this.countSqnLabel.TabIndex = 19;
+            this.resetButton.Location = new System.Drawing.Point(569, 25);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(85, 23);
+            this.resetButton.TabIndex = 23;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // countAmfLabel
+            // label11
             // 
-            this.countAmfLabel.AutoSize = true;
-            this.countAmfLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countAmfLabel.Location = new System.Drawing.Point(241, 136);
-            this.countAmfLabel.Name = "countAmfLabel";
-            this.countAmfLabel.Size = new System.Drawing.Size(0, 20);
-            this.countAmfLabel.TabIndex = 20;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 302);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 16);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Log";
             // 
-            // countAutnLabel
+            // commandTextBox
             // 
-            this.countAutnLabel.AutoSize = true;
-            this.countAutnLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countAutnLabel.Location = new System.Drawing.Point(494, 18);
-            this.countAutnLabel.Name = "countAutnLabel";
-            this.countAutnLabel.Size = new System.Drawing.Size(0, 20);
-            this.countAutnLabel.TabIndex = 32;
+            this.commandTextBox.Location = new System.Drawing.Point(112, 99);
+            this.commandTextBox.MaxLength = 520;
+            this.commandTextBox.Multiline = true;
+            this.commandTextBox.Name = "commandTextBox";
+            this.commandTextBox.Size = new System.Drawing.Size(542, 165);
+            this.commandTextBox.TabIndex = 20;
+            this.commandTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.commandTextBox_KeyPress);
             // 
-            // countKLabel2
+            // cmdLabel
             // 
-            this.countKLabel2.AutoSize = true;
-            this.countKLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countKLabel2.Location = new System.Drawing.Point(493, 51);
-            this.countKLabel2.Name = "countKLabel2";
-            this.countKLabel2.Size = new System.Drawing.Size(0, 20);
-            this.countKLabel2.TabIndex = 33;
+            this.cmdLabel.AutoSize = true;
+            this.cmdLabel.Location = new System.Drawing.Point(20, 102);
+            this.cmdLabel.Name = "cmdLabel";
+            this.cmdLabel.Size = new System.Drawing.Size(69, 16);
+            this.cmdLabel.TabIndex = 2;
+            this.cmdLabel.Text = "Command";
             // 
-            // countRandLabel2
+            // label10
             // 
-            this.countRandLabel2.AutoSize = true;
-            this.countRandLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countRandLabel2.Location = new System.Drawing.Point(496, 81);
-            this.countRandLabel2.Name = "countRandLabel2";
-            this.countRandLabel2.Size = new System.Drawing.Size(0, 20);
-            this.countRandLabel2.TabIndex = 34;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(86, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 16);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Card Reader";
             // 
-            // countOpLabel2
+            // readersComboBox
             // 
-            this.countOpLabel2.AutoSize = true;
-            this.countOpLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.countOpLabel2.Location = new System.Drawing.Point(497, 114);
-            this.countOpLabel2.Name = "countOpLabel2";
-            this.countOpLabel2.Size = new System.Drawing.Size(0, 20);
-            this.countOpLabel2.TabIndex = 35;
+            this.readersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.readersComboBox.FormattingEnabled = true;
+            this.readersComboBox.Location = new System.Drawing.Point(186, 22);
+            this.readersComboBox.Name = "readersComboBox";
+            this.readersComboBox.Size = new System.Drawing.Size(353, 24);
+            this.readersComboBox.TabIndex = 0;
+            this.readersComboBox.DropDown += new System.EventHandler(this.ReadersComboBox_DropDown);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.hScrollBar1);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Location = new System.Drawing.Point(104, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPage1.Size = new System.Drawing.Size(765, 533);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Convert To Scr";
+            // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(18, 43);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(8, 8);
+            this.hScrollBar1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Enter path of file to convert";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 534);
+            this.ClientSize = new System.Drawing.Size(1270, 717);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -927,17 +1050,20 @@ namespace WindowsFormsApp1
             this.resultGroupBox.PerformLayout();
             this.algoGroupBox.ResumeLayout(false);
             this.algoGroupBox.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.cardPlayerTabPage.ResumeLayout(false);
+            this.cardPlayerTabPage.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
@@ -1017,6 +1143,15 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label countRandLabel2;
         private System.Windows.Forms.Label countKLabel2;
         private System.Windows.Forms.Label countAutnLabel;
+        private System.Windows.Forms.TabPage cardPlayerTabPage;
+        private System.Windows.Forms.ComboBox readersComboBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox commandTextBox;
+        private System.Windows.Forms.Label cmdLabel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Button sendCommandButton;
+        private System.Windows.Forms.RichTextBox LogTextBox;
     }
 }
 
