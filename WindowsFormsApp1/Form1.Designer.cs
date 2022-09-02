@@ -109,7 +109,6 @@ namespace WindowsFormsApp1
             this.LogTextBox = new System.Windows.Forms.RichTextBox();
             this.sendCommandButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.commandTextBox = new System.Windows.Forms.TextBox();
             this.cmdLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -212,7 +211,7 @@ namespace WindowsFormsApp1
             this.tabPage2.Location = new System.Drawing.Point(104, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(765, 533);
+            this.tabPage2.Size = new System.Drawing.Size(1119, 648);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Authentication";
             // 
@@ -631,7 +630,7 @@ namespace WindowsFormsApp1
             this.tabPage3.Location = new System.Drawing.Point(104, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(765, 533);
+            this.tabPage3.Size = new System.Drawing.Size(1119, 648);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Verify Milenage";
             // 
@@ -913,7 +912,6 @@ namespace WindowsFormsApp1
             this.cardPlayerTabPage.Controls.Add(this.LogTextBox);
             this.cardPlayerTabPage.Controls.Add(this.sendCommandButton);
             this.cardPlayerTabPage.Controls.Add(this.resetButton);
-            this.cardPlayerTabPage.Controls.Add(this.label11);
             this.cardPlayerTabPage.Controls.Add(this.commandTextBox);
             this.cardPlayerTabPage.Controls.Add(this.cmdLabel);
             this.cardPlayerTabPage.Controls.Add(this.label10);
@@ -927,10 +925,10 @@ namespace WindowsFormsApp1
             // LogTextBox
             // 
             this.LogTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogTextBox.Location = new System.Drawing.Point(54, 307);
+            this.LogTextBox.Location = new System.Drawing.Point(17, 102);
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ReadOnly = true;
-            this.LogTextBox.Size = new System.Drawing.Size(1011, 291);
+            this.LogTextBox.Size = new System.Drawing.Size(1037, 433);
             this.LogTextBox.TabIndex = 26;
             this.LogTextBox.Text = "";
             // 
@@ -954,29 +952,20 @@ namespace WindowsFormsApp1
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 302);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 16);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Log";
-            // 
             // commandTextBox
             // 
-            this.commandTextBox.Location = new System.Drawing.Point(112, 99);
+            this.commandTextBox.Location = new System.Drawing.Point(89, 554);
             this.commandTextBox.MaxLength = 520;
             this.commandTextBox.Multiline = true;
             this.commandTextBox.Name = "commandTextBox";
-            this.commandTextBox.Size = new System.Drawing.Size(542, 165);
+            this.commandTextBox.Size = new System.Drawing.Size(965, 45);
             this.commandTextBox.TabIndex = 20;
             this.commandTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.commandTextBox_KeyPress);
             // 
             // cmdLabel
             // 
             this.cmdLabel.AutoSize = true;
-            this.cmdLabel.Location = new System.Drawing.Point(20, 102);
+            this.cmdLabel.Location = new System.Drawing.Point(14, 554);
             this.cmdLabel.Name = "cmdLabel";
             this.cmdLabel.Size = new System.Drawing.Size(69, 16);
             this.cmdLabel.TabIndex = 2;
@@ -1014,7 +1003,7 @@ namespace WindowsFormsApp1
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPage1.Size = new System.Drawing.Size(765, 533);
+            this.tabPage1.Size = new System.Drawing.Size(1119, 648);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Convert To Scr";
             // 
@@ -1148,7 +1137,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox commandTextBox;
         private System.Windows.Forms.Label cmdLabel;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button sendCommandButton;
         private System.Windows.Forms.RichTextBox LogTextBox;

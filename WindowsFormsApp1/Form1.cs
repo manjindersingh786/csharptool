@@ -8,6 +8,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        private bool logEmpty = false;
         public Form1()
         {
             CardTool.establishConnection();
@@ -486,11 +487,28 @@ namespace WindowsFormsApp1
         }
         private void printLineInLog(string str, Color clr)
         {
+            if(false == logEmpty)
+            {
+                LogTextBox.Text = "A";
+                int textHeight;
+                using (Graphics g = LogTextBox.CreateGraphics())
+                {
+                    textHeight = TextRenderer.MeasureText(g, LogTextBox.Text, LogTextBox.Font).Height;
+                }
+                LogTextBox.Text = "";
+                for (int i = 0; i < ((LogTextBox.Height / textHeight)-3); i++)
+                {
+                    LogTextBox.AppendText("\r\n");
+                }
+                logEmpty = true;
+            }
+
+
             LogTextBox.SelectionLength = 0;
             LogTextBox.SelectionStart = LogTextBox.TextLength;
             LogTextBox.SelectionColor = clr;
 
-
+            LogTextBox.ScrollToCaret();
             LogTextBox.AppendText(str);
             LogTextBox.SelectionColor = LogTextBox.ForeColor;
             LogTextBox.AppendText(Environment.NewLine);
@@ -526,8 +544,8 @@ namespace WindowsFormsApp1
             }
 
             //Append command
-            LogTextBox.AppendText("<- ");
-            printLineInLog("Reset", Color.Blue);
+            //LogTextBox.AppendText("<- ");
+            printLineInLog("<- Reset", Color.Blue);
             
             //Reset the card reader
             var atr = CardTool.ResetCard();
@@ -559,6 +577,8 @@ namespace WindowsFormsApp1
                 }
                 i++;
             }
+
+            commandTextBox.Text = "";
 
             for (i = 0; i < commands.Length; i++)
             {
