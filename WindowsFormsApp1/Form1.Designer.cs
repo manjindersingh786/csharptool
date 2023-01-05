@@ -106,6 +106,10 @@ namespace WindowsFormsApp1
             this.autnLabel2 = new System.Windows.Forms.Label();
             this.autnText2 = new System.Windows.Forms.TextBox();
             this.cardPlayerTabPage = new System.Windows.Forms.TabPage();
+            this.browseScriptButton = new System.Windows.Forms.Button();
+            this.executeButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.scriptTextBox = new System.Windows.Forms.TextBox();
             this.LogTextBox = new System.Windows.Forms.RichTextBox();
             this.sendCommandButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
@@ -116,6 +120,7 @@ namespace WindowsFormsApp1
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.label2 = new System.Windows.Forms.Label();
+            this.scriptDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.resultGroupBox.SuspendLayout();
@@ -909,6 +914,10 @@ namespace WindowsFormsApp1
             // cardPlayerTabPage
             // 
             this.cardPlayerTabPage.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cardPlayerTabPage.Controls.Add(this.browseScriptButton);
+            this.cardPlayerTabPage.Controls.Add(this.executeButton);
+            this.cardPlayerTabPage.Controls.Add(this.label11);
+            this.cardPlayerTabPage.Controls.Add(this.scriptTextBox);
             this.cardPlayerTabPage.Controls.Add(this.LogTextBox);
             this.cardPlayerTabPage.Controls.Add(this.sendCommandButton);
             this.cardPlayerTabPage.Controls.Add(this.resetButton);
@@ -922,6 +931,42 @@ namespace WindowsFormsApp1
             this.cardPlayerTabPage.TabIndex = 3;
             this.cardPlayerTabPage.Text = "Card Player";
             // 
+            // browseScriptButton
+            // 
+            this.browseScriptButton.Location = new System.Drawing.Point(1023, 28);
+            this.browseScriptButton.Name = "browseScriptButton";
+            this.browseScriptButton.Size = new System.Drawing.Size(31, 23);
+            this.browseScriptButton.TabIndex = 30;
+            this.browseScriptButton.Text = "...";
+            this.browseScriptButton.UseVisualStyleBackColor = true;
+            this.browseScriptButton.Click += new System.EventHandler(this.browseScriptButton_Click);
+            // 
+            // executeButton
+            // 
+            this.executeButton.Location = new System.Drawing.Point(754, 61);
+            this.executeButton.Name = "executeButton";
+            this.executeButton.Size = new System.Drawing.Size(126, 23);
+            this.executeButton.TabIndex = 29;
+            this.executeButton.Text = "Execute Script";
+            this.executeButton.UseVisualStyleBackColor = true;
+            this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(497, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 16);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Script Path";
+            // 
+            // scriptTextBox
+            // 
+            this.scriptTextBox.Location = new System.Drawing.Point(581, 27);
+            this.scriptTextBox.Name = "scriptTextBox";
+            this.scriptTextBox.Size = new System.Drawing.Size(436, 22);
+            this.scriptTextBox.TabIndex = 27;
+            // 
             // LogTextBox
             // 
             this.LogTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -934,7 +979,7 @@ namespace WindowsFormsApp1
             // 
             // sendCommandButton
             // 
-            this.sendCommandButton.Location = new System.Drawing.Point(270, 61);
+            this.sendCommandButton.Location = new System.Drawing.Point(105, 61);
             this.sendCommandButton.Name = "sendCommandButton";
             this.sendCommandButton.Size = new System.Drawing.Size(126, 23);
             this.sendCommandButton.TabIndex = 25;
@@ -944,9 +989,9 @@ namespace WindowsFormsApp1
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(569, 25);
+            this.resetButton.Location = new System.Drawing.Point(356, 61);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(85, 23);
+            this.resetButton.Size = new System.Drawing.Size(102, 23);
             this.resetButton.TabIndex = 23;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
@@ -954,12 +999,13 @@ namespace WindowsFormsApp1
             // 
             // commandTextBox
             // 
+            this.commandTextBox.AcceptsReturn = true;
             this.commandTextBox.Location = new System.Drawing.Point(89, 554);
             this.commandTextBox.MaxLength = 520;
-            this.commandTextBox.Multiline = true;
             this.commandTextBox.Name = "commandTextBox";
-            this.commandTextBox.Size = new System.Drawing.Size(965, 45);
+            this.commandTextBox.Size = new System.Drawing.Size(965, 22);
             this.commandTextBox.TabIndex = 20;
+            this.commandTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.commandTextBox_KeyDown);
             this.commandTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.commandTextBox_KeyPress);
             // 
             // cmdLabel
@@ -974,7 +1020,7 @@ namespace WindowsFormsApp1
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(86, 25);
+            this.label10.Location = new System.Drawing.Point(14, 25);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 16);
             this.label10.TabIndex = 1;
@@ -984,7 +1030,7 @@ namespace WindowsFormsApp1
             // 
             this.readersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.readersComboBox.FormattingEnabled = true;
-            this.readersComboBox.Location = new System.Drawing.Point(186, 22);
+            this.readersComboBox.Location = new System.Drawing.Point(105, 22);
             this.readersComboBox.Name = "readersComboBox";
             this.readersComboBox.Size = new System.Drawing.Size(353, 24);
             this.readersComboBox.TabIndex = 0;
@@ -1023,11 +1069,15 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 4;
             this.label2.Text = "Enter path of file to convert";
             // 
+            // scriptDialog
+            // 
+            this.scriptDialog.Filter = "Script Files|*.scr";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 717);
+            this.ClientSize = new System.Drawing.Size(1278, 704);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -1140,6 +1190,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button sendCommandButton;
         private System.Windows.Forms.RichTextBox LogTextBox;
+        private System.Windows.Forms.Button executeButton;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox scriptTextBox;
+        private System.Windows.Forms.OpenFileDialog scriptDialog;
+        private System.Windows.Forms.Button browseScriptButton;
     }
 }
 

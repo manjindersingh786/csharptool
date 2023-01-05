@@ -483,8 +483,18 @@ namespace WindowsFormsApp1
 
         private void commandTextBox_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
+
             hexKeyOnly(e);
         }
+
+        private void commandTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                sendCommandButton_Click(this, new EventArgs());
+            }
+        }
+
         private void printLineInLog(string str, Color clr)
         {
             if(false == logEmpty)
@@ -522,7 +532,13 @@ namespace WindowsFormsApp1
         private void printRspLineInLog(string str)
         {
             LogTextBox.AppendText("-> ");
-            printLineInLog(str, Color.Green);
+            printLineInLog(str, Color.HotPink);
+        }
+
+        private void prinStatusWordsInLog(string str, Color c)
+        {
+            LogTextBox.AppendText("-> ");
+            printLineInLog(str, c);
         }
 
         private void printErrorLineInLog(string str)
@@ -551,7 +567,7 @@ namespace WindowsFormsApp1
             var atr = CardTool.ResetCard();
 
             //append the response in log
-            printRspLineInLog(atr);
+            printRspLineInLog(atr.Replace(" ", "   "));
 
         }
 
@@ -560,16 +576,16 @@ namespace WindowsFormsApp1
             byte[][] commands = new byte[commandTextBox.Lines.Length][];
             byte[] responseBuffer;
             int i = 0;
-            foreach(var command in commandTextBox.Lines)
+            foreach (var command in commandTextBox.Lines)
             {
-                if(10 > command.Length)
+                if (10 > command.Length)
                 {
                     printLineInLog("Complete command header missing in command no. " + (i + 1).ToString(), Color.Red);
                     return;
                 }
 
                 commands[i] = StringToByteArrayFastest(command);
-                
+
                 if ((commands[i].Length > 5) && (commands[i][4] != (commands[i].Length - 5)))
                 {
                     printLineInLog("Complete command header missing in command no. " + (i + 1).ToString(), Color.Red);
@@ -582,34 +598,156 @@ namespace WindowsFormsApp1
 
             for (i = 0; i < commands.Length; i++)
             {
-                printCmdLineInLog(BitConverter.ToString(commands[i]).Replace("-","  "));
+                printCmdLineInLog(BitConverter.ToString(commands[i]).Replace("-", "  "));
                 try
                 {
                     responseBuffer = CardTool.sendCommand(commands[i]);
-                }catch(Exception ex)
+                } catch (Exception ex)
                 {
                     printLineInLog(ex.Message, Color.Red);
                     return;
                 }
-                
 
-                if(responseBuffer.Length > 2)
+
+                int startIndex = 0;
+
+                if (responseBuffer.Length > 2)
                 {
                     var remLength = responseBuffer.Length - 2;
-                    int startIndex = 0;
                     var rowLength = 16;
                     while (remLength > rowLength)
                     {
-                        printRspLineInLog(BitConverter.ToString(responseBuffer, startIndex, rowLength).Replace("-", "\t"));
+                        printRspLineInLog(BitConverter.ToString(responseBuffer, startIndex, rowLength).Replace("-", "   "));
                         remLength -= rowLength;
                         startIndex += rowLength;
                     }
 
-                    printRspLineInLog(BitConverter.ToString(responseBuffer, startIndex, remLength).Replace("-", "\t"));
+                    printRspLineInLog(BitConverter.ToString(responseBuffer, startIndex, remLength).Replace("-", "   "));
+
+                    startIndex = responseBuffer.Length - 2;
                 }
-                
-                printRspLineInLog("SW: "+ BitConverter.ToString(responseBuffer, 0, 0x02).Replace("-", " "));
+
+                if ((responseBuffer[startIndex] == 0x90)
+                    ||
+                    (responseBuffer[startIndex] == 0x9F)
+                    ||
+                    (responseBuffer[startIndex] == 0x61)
+                    ||
+                    (responseBuffer[startIndex] == 0x91))
+                {
+                    prinStatusWordsInLog("SW: " + BitConverter.ToString(responseBuffer, startIndex, 0x02).Replace("-", " "), Color.Green);
+                }
+                else
+                {
+                    prinStatusWordsInLog("SW: " + BitConverter.ToString(responseBuffer, startIndex, 0x02).Replace("-", " "), Color.Red);
+                }
             }
+        }
+
+        private void browseScriptButton_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.OK == scriptDialog.ShowDialog())
+            {
+                scriptTextBox.Text = scriptDialog.FileName;
+            }
+        }
+
+        private void executeButton_Click(object sender, EventArgs e)
+        {
+            string l;
+
+            //Read all lines
+            var lines = File.ReadAllLines(scriptTextBox.Text);
+            byte[] command;
+            byte[] responseBuffer;
+            int i = 0;
+            foreach (var line in lines)
+            {
+                l = line;
+                //check line must not be started with comment
+                if (!l.StartsWith(@"//"))
+                {
+                    if (l.Equals("Reset;"))
+                    {
+                        printLineInLog("<- Reset", Color.Blue);
+
+                        //Reset the card reader
+                        var atr = CardTool.ResetCard();
+
+                        //append the response in log
+                        printRspLineInLog(atr.Replace(" ", "   "));
+
+                    } // if (l.Equals("Reset;"))
+                    else
+                    {
+                        //remove ; from the line
+                        l = line.Remove(line.Length - 1);
+
+                        if (10 > l.Length)
+                        {
+                            printLineInLog("Complete command header missing in command no. " + (i + 1).ToString(), Color.Red);
+                            return;
+                        }
+
+
+                        /*Get command in hex*/
+                        command = StringToByteArrayFastest(l);
+
+                        if ((command.Length > 5) && (command[4] != (command.Length - 5)))
+                        {
+                            printLineInLog("Complete command header missing in command no. " + (i + 1).ToString(), Color.Red);
+                            return;
+                        }
+
+                        printCmdLineInLog(BitConverter.ToString(command).Replace("-", "  "));
+                        try
+                        {
+                            responseBuffer = CardTool.sendCommand(command);
+                        }
+                        catch (Exception ex)
+                        {
+                            printLineInLog(ex.Message, Color.Red);
+                            return;
+                        }
+
+                        int startIndex = 0;
+
+                        if (responseBuffer.Length > 2)
+                        {
+                            var remLength = responseBuffer.Length - 2;
+                            var rowLength = 16;
+                            while (remLength > rowLength)
+                            {
+                                printRspLineInLog(BitConverter.ToString(responseBuffer, startIndex, rowLength).Replace("-", "   "));
+                                remLength -= rowLength;
+                                startIndex += rowLength;
+                            }
+
+                            printRspLineInLog(BitConverter.ToString(responseBuffer, startIndex, remLength).Replace("-", "   "));
+
+                            startIndex = responseBuffer.Length - 2;
+                        }
+
+                        if ((responseBuffer[startIndex] == 0x90)
+                            ||
+                            (responseBuffer[startIndex] == 0x9F)
+                            ||
+                            (responseBuffer[startIndex] == 0x61)
+                            ||
+                            (responseBuffer[startIndex] == 0x91))
+                        {
+                            prinStatusWordsInLog("SW: " + BitConverter.ToString(responseBuffer, startIndex, 0x02).Replace("-", " "), Color.Green);
+                        }
+                        else
+                        {
+                            prinStatusWordsInLog("SW: " + BitConverter.ToString(responseBuffer, startIndex, 0x02).Replace("-", " "), Color.Red);
+                        }
+                    }
+
+                }
+
+            }
+
         }
     }
 }

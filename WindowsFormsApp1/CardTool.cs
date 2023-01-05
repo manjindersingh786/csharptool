@@ -48,6 +48,9 @@ namespace WindowsFormsApp1
             {
                 if (cardReader != null)
                 {
+                    /*Reset the card*/
+                    cardReader.Reconnect(SCardShareMode.Shared,SCardProtocol.Any, SCardReaderDisposition.Reset);
+
                     ReaderStatus rs = cardReader.GetStatus();
                     var atrbytes = rs.GetAtr();
                     return BitConverter.ToString(atrbytes).Replace("-", " ");
