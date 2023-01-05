@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\JCRE">
+      <UniqueIdentifier>{d4db2eb9-5a0e-41b5-a075-dd870fa71a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JCRE\JCVM">
+      <UniqueIdentifier>{3151b4df-655b-4baf-af3c-1ebf0fe70034}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JCRE\ContextManager">
+      <UniqueIdentifier>{0871c409-9c91-4264-9b3c-be85777a9b90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JCRE\GP_API">
+      <UniqueIdentifier>{a7828628-ebcc-4242-bdfd-5c369f835f32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JCRE\JC_API">
+      <UniqueIdentifier>{00f6da42-17d3-4cf8-ba09-d2f68792a2a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent">
+      <UniqueIdentifier>{05b82e3a-5d43-45ff-8a61-ee94a0d9710c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom">
+      <UniqueIdentifier>{211eef44-d93d-4a5c-a465-95039449d1bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\31_102">
+      <UniqueIdentifier>{f66eda9e-5b03-4807-a4e2-3659b66e9392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\51_011">
+      <UniqueIdentifier>{c1642208-30e6-4161-af5e-5a6d7effb5b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\31_111">
+      <UniqueIdentifier>{8c0258e9-edcc-4ac2-be66-0bb3b1f00e94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\RAM">
+      <UniqueIdentifier>{1a6c16fb-8c22-4139-986e-2ecade9737da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\RFM">
+      <UniqueIdentifier>{63516c5d-91df-4021-9142-f0a562dd7867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\eSIM">
+      <UniqueIdentifier>{70204c12-8625-4564-9692-13b90fc8ac25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Payment">
+      <UniqueIdentifier>{4a43c1b4-efcd-480d-adac-65703dcc450c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\ID">
+      <UniqueIdentifier>{f948f8e9-7cb5-43a6-9723-9e0813427b2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\StateManager">
+      <UniqueIdentifier>{272bb85e-7cec-409b-8885-765772b08297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Oasis_TLS">
+      <UniqueIdentifier>{47f09b3a-d1eb-4d24-a467-8e136e2ceaa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\OasisAdminAgent">
+      <UniqueIdentifier>{1817d443-9fe1-42a6-b338-cbd9466f3b7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\DNS">
+      <UniqueIdentifier>{9982c890-bf4b-4bf1-acef-212d93658bc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\SessionInitializer">
+      <UniqueIdentifier>{3d96eca2-3dd4-4991-b371-9db163a88caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExceptionManager">
+      <UniqueIdentifier>{17c13f2d-ab17-4254-adde-d7cee9d2ed56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExceptionManager\BusinessExceptionManager">
+      <UniqueIdentifier>{daf4ee19-8f28-4fe6-b36d-4a05035a8d28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExceptionManager\CoreExceptionManager">
+      <UniqueIdentifier>{001fc99a-15c6-4963-92a9-4ac449735485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\51_014">
+      <UniqueIdentifier>{cc21943b-9693-45f2-bf86-240d818d7db5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JCRE\43_019">
+      <UniqueIdentifier>{9151267f-9b10-481d-b1e1-f39e88f76f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JCRE\102_241">
+      <UniqueIdentifier>{70873493-ec37-4e84-8065-af49aae28e98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers">
+      <UniqueIdentifier>{9c36e040-47f1-446c-bb4b-ffe34f1eecaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\Abstraction">
+      <UniqueIdentifier>{db1e8bbe-0919-4c85-9c6f-0e9fbda8cf02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\Abstraction\7816_3">
+      <UniqueIdentifier>{c100928f-fb39-4b2c-ae50-c46fbb02963f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\Abstraction\AntiTearing">
+      <UniqueIdentifier>{3d39308f-d3a6-49a3-af44-83f0f44774d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\Abstraction\WearLeveling">
+      <UniqueIdentifier>{eded8415-9ee1-4a21-94fa-34485b52bfa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\Abstraction\Wrappers">
+      <UniqueIdentifier>{d9e1c183-0cc0-464f-a495-854470772bca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_Simulator">
+      <UniqueIdentifier>{732f3745-4eea-4201-85da-f782cebdff3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_Simulator\ErrorHandler">
+      <UniqueIdentifier>{ce3f1eeb-8b40-455b-b8db-32cf4b8a12b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_Simulator\Startup">
+      <UniqueIdentifier>{7fa3e68e-d0be-46a2-a0aa-f1eb5427c2d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_Simulator\UtilityAPI">
+      <UniqueIdentifier>{33721e75-278f-4183-bd0e-f8e78c5758c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents">
+      <UniqueIdentifier>{5fc0f4e6-51a3-4404-8b9c-cfa1360ac245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\DataManager">
+      <UniqueIdentifier>{d1490888-9ff0-4119-9a94-874fe78cb2ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\Algorithms">
+      <UniqueIdentifier>{7e967e36-31fb-4fdc-a674-ffdb363c1674}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\MemoryManager">
+      <UniqueIdentifier>{a4880b7a-92d5-4427-9904-f503f2b86820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\7816_6">
+      <UniqueIdentifier>{2de71b7d-9302-481c-8bdc-cefbf2a3a1a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\7816_9">
+      <UniqueIdentifier>{e4d86b77-719b-4d5f-9b83-cbc34500d896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\TransactionManager">
+      <UniqueIdentifier>{bb616ccb-3eff-4281-801b-e75f3e4624c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\7816_4">
+      <UniqueIdentifier>{bbc0db65-bf00-4afe-ba25-17453e4fd2e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\ChannelManager">
+      <UniqueIdentifier>{f388d4eb-5cec-4ec6-8363-831d91d1577e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\OasisCommands">
+      <UniqueIdentifier>{83c4b8ed-7b46-40e3-beb1-b2aa75bb1f4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\102_222">
+      <UniqueIdentifier>{613a9774-ac60-4726-84bd-ae1d1f4ea87b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\102_221">
+      <UniqueIdentifier>{01b89e3e-e198-45bd-878e-cd187e4f96ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\GP_2_2">
+      <UniqueIdentifier>{1faebada-0ba7-4db9-a78d-363f78edc5f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\GP_2_2\SCP_02_03">
+      <UniqueIdentifier>{331946e7-c230-4ba6-91fe-3da2b64f397d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\GP_2_2\SecurityDomain">
+      <UniqueIdentifier>{c4d426b6-feea-41d0-af1a-31174719c6eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\KeyManager">
+      <UniqueIdentifier>{e0a0a99e-ea33-41b7-a9d0-2cbc66f2b0a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\ResponseManager">
+      <UniqueIdentifier>{1616a5d0-d1d1-4b3a-8218-2204512d6e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\OsInit">
+      <UniqueIdentifier>{4d6c0b42-7598-4cc9-ab3d-4f3c543cddbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\CommandRouter">
+      <UniqueIdentifier>{9a1b30d9-d99f-4be8-a5b3-ae4f3a6c8b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_THC80F340A">
+      <UniqueIdentifier>{b87f8156-34c5-4744-b83e-092476b91a43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_THC80F340A\ErrorHandler">
+      <UniqueIdentifier>{115e115e-999f-4a7b-9b3c-a9a5d8a416ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_THC80F340A\UtilityAPI">
+      <UniqueIdentifier>{8c3081b2-0308-4eb8-b52f-f2df08423caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_THC80F340A\Startup">
+      <UniqueIdentifier>{c896800b-5ca7-40ea-9fe6-4a134d5128a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\102_225">
+      <UniqueIdentifier>{12ba7719-abd1-430e-8d39-0efba56ab9e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\102_226">
+      <UniqueIdentifier>{981f82a8-9d5e-4206-a8bf-7d8706af4afa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\31_115">
+      <UniqueIdentifier>{38413132-2623-4077-8f87-24d69a82ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\31_116">
+      <UniqueIdentifier>{5882fb75-405d-48c1-b954-fcc618769e84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\HAL_Simulator\include">
+      <UniqueIdentifier>{c746ea77-fb46-4820-a3d4-a6371a74597f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\Abstraction\7816_3\include">
+      <UniqueIdentifier>{6dc8d195-abba-44a5-a591-d6c0b99dd2a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HardwareLayers\Abstraction\include">
+      <UniqueIdentifier>{bcaa7a0e-4e06-4240-8344-e72c27a8812c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExceptionManager\CoreExceptionManager\include">
+      <UniqueIdentifier>{61e69ea2-1261-47bd-958c-9f210908c672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\102_221\include">
+      <UniqueIdentifier>{dd897dfd-21e2-4927-9d07-52b76d4b7364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\102_222\include">
+      <UniqueIdentifier>{a6c59762-3115-4bc9-9219-23f204736eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\102_225\include">
+      <UniqueIdentifier>{6220a0f3-094d-4054-b49b-7d249692649c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\102_226\include">
+      <UniqueIdentifier>{92903315-05fa-47a6-b205-08066384390c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\7816_4\include">
+      <UniqueIdentifier>{3973632a-718f-48b5-9035-f5e1f8c71118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\7816_9\include">
+      <UniqueIdentifier>{dc3aab96-2a21-47e7-bdc7-16bddb77958f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\Algorithms\include">
+      <UniqueIdentifier>{3a0a3279-c3d0-40ca-920f-b8e0dfb711c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\ChannelManager\include">
+      <UniqueIdentifier>{703be2fc-6414-458f-8e80-82a6fae6096d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\CommandRouter\include">
+      <UniqueIdentifier>{e35fa437-885d-4f23-8390-d06acd83cfa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\MemoryManager\include">
+      <UniqueIdentifier>{a9dd7393-8711-4dd5-8df8-43d48895dbbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\OasisCommands\include">
+      <UniqueIdentifier>{969d08c6-836b-4838-b0c1-c649885e0746}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CoreComponents\OsInit\include">
+      <UniqueIdentifier>{190ef9a1-9146-4b77-bc36-e20b26ef8f59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\31_102\include">
+      <UniqueIdentifier>{ee826194-522e-49d7-b548-4c9c035831d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\31_111\include">
+      <UniqueIdentifier>{131099e9-70b7-4e28-82c4-cd7e9cefe44d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\31_115\include">
+      <UniqueIdentifier>{f3f413f1-e448-410a-a7fb-12031a418019}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\31_116\include">
+      <UniqueIdentifier>{235cf8e8-5669-429d-94dd-131ebecc8b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BusinessComponent\Telecom\51_011\include">
+      <UniqueIdentifier>{9eaf1b8d-e0ae-40da-983e-db4e551161a9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HardwareLayers\Abstraction\Main.c">
+      <Filter>Source Files\HardwareLayers\Abstraction</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\HAL_Simulator\SimulPublicVars.c">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\HAL_Simulator\SimulReadWrite.c">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\HAL_Simulator\SimulTearing.c">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\HAL_Simulator\UtilityAPI\SimulLowLevel.c">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator\UtilityAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\HAL_Simulator\Startup\Simul.cpp">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator\Startup</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\CommandRouter\source\CommandRouter.c">
+      <Filter>Source Files\CoreComponents\CommandRouter</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\Abstraction\7816_3\source\ATR.c">
+      <Filter>Source Files\HardwareLayers\Abstraction\7816_3</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\Abstraction\7816_3\source\Communication.c">
+      <Filter>Source Files\HardwareLayers\Abstraction\7816_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\7816_4\source\7816_4.c">
+      <Filter>Source Files\CoreComponents\7816_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_221\source\UICC_CommandDispatcher.c">
+      <Filter>Source Files\CoreComponents\102_221</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\Abstraction\Oasis.c">
+      <Filter>Source Files\HardwareLayers\Abstraction</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\7816_4\source\StatusWords.c">
+      <Filter>Source Files\CoreComponents\7816_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_221\source\GenericCommands.c">
+      <Filter>Source Files\CoreComponents\102_221</Filter>
+    </ClCompile>
+    <ClCompile Include="ExceptionManager\CoreExceptionManager\source\ExceptionHandling.c">
+      <Filter>Source Files\ExceptionManager\CoreExceptionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\MemoryManager\source\Utilities.c">
+      <Filter>Source Files\CoreComponents\MemoryManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\OS_Init\source\OSinit.c">
+      <Filter>Source Files\CoreComponents\OsInit</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\MemoryManager\source\MemoryManager.c">
+      <Filter>Source Files\CoreComponents\MemoryManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_221\source\102_221.c">
+      <Filter>Source Files\CoreComponents\102_221</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\7816_9\source\7816_9.c">
+      <Filter>Source Files\CoreComponents\7816_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_221\source\FileHandlingCommands.c">
+      <Filter>Source Files\CoreComponents\102_221</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\51_011\source\sim_FileHandlingCommands.c">
+      <Filter>Source Files\BusinessComponent\Telecom\51_011</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_221\source\TransmissionCommands.c">
+      <Filter>Source Files\CoreComponents\102_221</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\51_011\source\sim_GenericCommands.c">
+      <Filter>Source Files\BusinessComponent\Telecom\51_011</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_221\source\PinManagementCommands.c">
+      <Filter>Source Files\CoreComponents\102_221</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_221\source\CatCommands.c">
+      <Filter>Source Files\CoreComponents\102_221</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\51_011\source\sim_CatCommands.c">
+      <Filter>Source Files\BusinessComponent\Telecom\51_011</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\7816_4\source\PinManagement.c">
+      <Filter>Source Files\CoreComponents\7816_4</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\51_011\source\sim_PinManagementCommands.c">
+      <Filter>Source Files\BusinessComponent\Telecom\51_011</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\OasisCommands\source\oasis_GenericCommands.c">
+      <Filter>Source Files\CoreComponents\OasisCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_222\source\102_222.c">
+      <Filter>Source Files\CoreComponents\102_222</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\31_102\source\usim_GenericCommands.c">
+      <Filter>Source Files\BusinessComponent\Telecom\31_102</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ChannelManager\source\channelManager.c">
+      <Filter>Source Files\CoreComponents\ChannelManager</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\31_111\source\31_111.c">
+      <Filter>Source Files\BusinessComponent\Telecom\31_111</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\31_115\source\31_115.c">
+      <Filter>Source Files\BusinessComponent\Telecom\31_115</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_225\source\102_225.c">
+      <Filter>Source Files\CoreComponents\102_225</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_226\source\102_226.c">
+      <Filter>Source Files\CoreComponents\102_226</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\31_116\source\31_116.c">
+      <Filter>Source Files\BusinessComponent\Telecom\31_116</Filter>
+    </ClCompile>
+    <ClCompile Include="BusinessComponent\Telecom\31_111\source\USIM_CatHandling.c">
+      <Filter>Source Files\BusinessComponent\Telecom\31_111</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\Abstraction\AntiTearing\AntiTearing.c">
+      <Filter>Source Files\HardwareLayers\Abstraction\AntiTearing</Filter>
+    </ClCompile>
+    <ClCompile Include="HardwareLayers\Abstraction\Wrappers\readUpdateNvmWrappers.c">
+      <Filter>Source Files\HardwareLayers\Abstraction\Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_3DES.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_AES.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_aes_128.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_BlockCipher.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_Checksum.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_comp128.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_CRC.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_DES.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_milenage.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_Signature.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Algorithms\source\algo_AES_CMAC.c">
+      <Filter>Source Files\CoreComponents\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\102_226\source\Rfm.c">
+      <Filter>Source Files\CoreComponents\102_226</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulConfig.h">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulDebug.h">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulExtern.h">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulLowLevel.h">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulTearing.h">
+      <Filter>Source Files\HardwareLayers\HAL_Simulator\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\7816_3\include\7816_3.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\7816_3\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\7816_3\include\7816_3_extern.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\7816_3\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\BitDefines.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\Constants.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\Debug.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\Main.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\MemoryWrappers.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\Oasis.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\types.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\wrappersExtern.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ExceptionManager\CoreExceptionManager\include\ExceptionHandling.h">
+      <Filter>Source Files\ExceptionManager\CoreExceptionManager\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ExceptionManager\CoreExceptionManager\include\ExceptionHandling_extern.h">
+      <Filter>Source Files\ExceptionManager\CoreExceptionManager\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_221\include\102_221.h">
+      <Filter>Source Files\CoreComponents\102_221\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_221\include\102_221_extern.h">
+      <Filter>Source Files\CoreComponents\102_221\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_221\include\UICC_CommandDispatcher_extern.h">
+      <Filter>Source Files\CoreComponents\102_221\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_221\include\UICC_CommandDispatcher.h">
+      <Filter>Source Files\CoreComponents\102_221\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_222\include\102_222.h">
+      <Filter>Source Files\CoreComponents\102_222\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_222\include\102_222_extern.h">
+      <Filter>Source Files\CoreComponents\102_222\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_225\include\102_225_extern.h">
+      <Filter>Source Files\CoreComponents\102_225\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_225\include\102_225.h">
+      <Filter>Source Files\CoreComponents\102_225\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_226\include\102_226_extern.h">
+      <Filter>Source Files\CoreComponents\102_226\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\102_226\include\102_226.h">
+      <Filter>Source Files\CoreComponents\102_226\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\7816_4\include\7816_4.h">
+      <Filter>Source Files\CoreComponents\7816_4\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\7816_4\include\7816_4_extern.h">
+      <Filter>Source Files\CoreComponents\7816_4\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\7816_4\include\statuswords.h">
+      <Filter>Source Files\CoreComponents\7816_4\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\7816_9\include\7816_9.h">
+      <Filter>Source Files\CoreComponents\7816_9\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\7816_9\include\7816_9_extern.h">
+      <Filter>Source Files\CoreComponents\7816_9\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Algorithms\include\Algorithms.h">
+      <Filter>Source Files\CoreComponents\Algorithms\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Algorithms\include\Algorithms_extern.h">
+      <Filter>Source Files\CoreComponents\Algorithms\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ChannelManager\include\channelManager.h">
+      <Filter>Source Files\CoreComponents\ChannelManager\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ChannelManager\include\channelManager_extern.h">
+      <Filter>Source Files\CoreComponents\ChannelManager\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\CommandRouter\include\CommandRouter.h">
+      <Filter>Source Files\CoreComponents\CommandRouter\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\CommandRouter\include\CommandRouterExtern.h">
+      <Filter>Source Files\CoreComponents\CommandRouter\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\MemoryManager\include\MemoryLayout.h">
+      <Filter>Source Files\CoreComponents\MemoryManager\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\MemoryManager\include\MemoryManager.h">
+      <Filter>Source Files\CoreComponents\MemoryManager\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\MemoryManager\include\MemoryManager_extern.h">
+      <Filter>Source Files\CoreComponents\MemoryManager\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\MemoryManager\include\SystemPage.h">
+      <Filter>Source Files\CoreComponents\MemoryManager\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\OasisCommands\include\OasisCommands.h">
+      <Filter>Source Files\CoreComponents\OasisCommands\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\OasisCommands\include\OasisCommands_extern.h">
+      <Filter>Source Files\CoreComponents\OasisCommands\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\OS_Init\include\OSinit.h">
+      <Filter>Source Files\CoreComponents\OsInit\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\OS_Init\include\OSinit_extern.h">
+      <Filter>Source Files\CoreComponents\OsInit\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\31_102\include\31_102.h">
+      <Filter>Source Files\BusinessComponent\Telecom\31_102\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\31_102\include\31_102_extern.h">
+      <Filter>Source Files\BusinessComponent\Telecom\31_102\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\31_111\include\31_111.h">
+      <Filter>Source Files\BusinessComponent\Telecom\31_111\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\31_111\include\31_111_extern.h">
+      <Filter>Source Files\BusinessComponent\Telecom\31_111\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\31_115\include\31_115.h">
+      <Filter>Source Files\BusinessComponent\Telecom\31_115\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\31_115\include\31_115_extern.h">
+      <Filter>Source Files\BusinessComponent\Telecom\31_115\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\31_116\include\31_116.h">
+      <Filter>Source Files\BusinessComponent\Telecom\31_116\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\31_116\include\31_116_extern.h">
+      <Filter>Source Files\BusinessComponent\Telecom\31_116\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\51_011\include\51_011.h">
+      <Filter>Source Files\BusinessComponent\Telecom\51_011\include</Filter>
+    </ClInclude>
+    <ClInclude Include="BusinessComponent\Telecom\51_011\include\51_011_extern.h">
+      <Filter>Source Files\BusinessComponent\Telecom\51_011\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Algorithms\include\algo_blockCipher_extern.h">
+      <Filter>Source Files\CoreComponents\Algorithms\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Algorithms\include\algo_checksum_extern.h">
+      <Filter>Source Files\CoreComponents\Algorithms\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Algorithms\include\algo_signature_extern.h">
+      <Filter>Source Files\CoreComponents\Algorithms\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\AntiTearing.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\AntiTearing_extern.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+    <ClInclude Include="HardwareLayers\Abstraction\Include\wrappers.h">
+      <Filter>Source Files\HardwareLayers\Abstraction\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+*** Creating Trace Output File '.\Debug\Output\THC80F340A_SC000_DEMO.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\debug\output\sc000_vect.o"'
+### List of Objects: adding '".\debug\output\sc000_init.o"'
+### List of Objects: adding '".\debug\output\main.o"'
+### List of Objects: adding '".\debug\output\memory_api.o"'
+### List of Objects: adding '".\debug\output\sc000_isr.o"'
+### List of Objects: adding '".\debug\output\sc_api.o"'
+### List of Objects: adding '".\debug\output\iso7816_main.o"'
+### List of Objects: adding '".\debug\output\iso7816_api.o"'
+### List of Objects: adding '".\debug\output\norflash.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M0 ".\debug\output\sc000_vect.o" ".\debug\output\sc000_init.o" ".\debug\output\main.o" ".\debug\output\memory_api.o" ".\debug\output\sc000_isr.o" ".\debug\output\sc_api.o" ".\debug\output\iso7816_main.o" ".\debug\output\iso7816_api.o" ".\debug\output\norflash.o" --strict --scatter ".\SC000_SYS\scat.scf" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Debug\List\THC80F340A_SC000_DEMO.map" -o .\Debug\Output\THC80F340A_SC000_DEMO.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\Debug\Output\THC80F340A_SC000_DEMO.axf'
+### ADS-LD Command File: '.\Debug\Output\THC80F340A_SC000_DEMO.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\Debug\Output\THC80F340A_SC000_DEMO.lnp', Handle=0x000007FC
+### Writing '.lnp' file
+### ADS-LD Command file '.\Debug\Output\THC80F340A_SC000_DEMO.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

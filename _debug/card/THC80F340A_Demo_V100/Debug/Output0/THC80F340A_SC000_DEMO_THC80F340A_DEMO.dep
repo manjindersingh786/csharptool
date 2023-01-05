@@ -1,0 +1,58 @@
+Dependencies for Project 'THC80F340A_SC000_DEMO', Target 'THC80F340A_DEMO': (DO NOT MODIFY !)
+CompilerVersion: 6180000::V6.18::ARMCLANG
+F (.\SC000_SYS\SC000_Vect.s)(0x5DC8D422)(--target=arm-arm-none-eabi -mcpu=cortex-m0 -masm=auto -c-mlittle-endian -gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 537" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"ARMCM0 SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./debug/output/sc000_vect.o)
+F (.\SC000_SYS\SC000_Init.s)(0x5DC8D422)(--target=arm-arm-none-eabi -mcpu=cortex-m0 -masm=auto -c-mlittle-endian -gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 537" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"ARMCM0 SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./debug/output/sc000_init.o)
+F (.\SC000_SYS\Main.c)(0x5DC8D422)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -mlittle-endian -gdwarf-4 -O3 -fno-function-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../THC80F480A_SC000_DEMO -I ./SC000_SYS -I ./ISO7816 -I ./NORFlash-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-D__UVISION_VERSION="537" -D_RTE_ -DARMCM0 -D_RTE_-o ./debug/output/main.o -MD)
+I (SC000_SYS\TSIM.h)(0x62D94997)
+I (SC000_SYS\SC_SFR.h)(0x5DC8D422)
+I (ISO7816\ISO7816.h)(0x5DC8D422)
+I (NORFlash\NORFlash.h)(0x5DC8D422)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x625283FE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x62528400)
+F (.\SC000_SYS\Memory_API.c)(0x5DC8D422)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -mlittle-endian -gdwarf-4 -O3 -fno-function-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../THC80F480A_SC000_DEMO -I ./SC000_SYS -I ./ISO7816 -I ./NORFlash-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-D__UVISION_VERSION="537" -D_RTE_ -DARMCM0 -D_RTE_-o ./debug/output/memory_api.o -MD)
+I (SC000_SYS\TSIM.h)(0x62D94997)
+I (SC000_SYS\SC_SFR.h)(0x5DC8D422)
+I (ISO7816\ISO7816.h)(0x5DC8D422)
+I (NORFlash\NORFlash.h)(0x5DC8D422)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x625283FE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x62528400)
+F (.\SC000_SYS\SC000_ISR.c)(0x5DC8D422)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -mlittle-endian -gdwarf-4 -O3 -fno-function-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../THC80F480A_SC000_DEMO -I ./SC000_SYS -I ./ISO7816 -I ./NORFlash-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-D__UVISION_VERSION="537" -D_RTE_ -DARMCM0 -D_RTE_-o ./debug/output/sc000_isr.o -MD)
+I (SC000_SYS\TSIM.h)(0x62D94997)
+I (SC000_SYS\SC_SFR.h)(0x5DC8D422)
+I (ISO7816\ISO7816.h)(0x5DC8D422)
+I (NORFlash\NORFlash.h)(0x5DC8D422)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x625283FE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x62528400)
+F (.\SC000_SYS\SC_API.c)(0x5DC8D422)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -mlittle-endian -gdwarf-4 -O3 -fno-function-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../THC80F480A_SC000_DEMO -I ./SC000_SYS -I ./ISO7816 -I ./NORFlash-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-D__UVISION_VERSION="537" -D_RTE_ -DARMCM0 -D_RTE_-o ./debug/output/sc_api.o -MD)
+I (SC000_SYS\TSIM.h)(0x62D94997)
+I (SC000_SYS\SC_SFR.h)(0x5DC8D422)
+I (ISO7816\ISO7816.h)(0x5DC8D422)
+I (NORFlash\NORFlash.h)(0x5DC8D422)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x625283FE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x62528400)
+F (.\SC000_SYS\SC_SFR.h)(0x5DC8D422)()
+F (.\SC000_SYS\THC80ASM.H)(0x5DC8D422)()
+F (.\ISO7816\ISO7816_Main.c)(0x5DC8D422)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -mlittle-endian -gdwarf-4 -O3 -fno-function-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../THC80F480A_SC000_DEMO -I ./SC000_SYS -I ./ISO7816 -I ./NORFlash-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-D__UVISION_VERSION="537" -D_RTE_ -DARMCM0 -D_RTE_-o ./debug/output/iso7816_main.o -MD)
+I (SC000_SYS\TSIM.h)(0x62D94997)
+I (SC000_SYS\SC_SFR.h)(0x5DC8D422)
+I (ISO7816\ISO7816.h)(0x5DC8D422)
+I (NORFlash\NORFlash.h)(0x5DC8D422)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x625283FE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x62528400)
+F (.\ISO7816\ISO7816_API.c)(0x5DC8D422)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -mlittle-endian -gdwarf-4 -O3 -fno-function-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../THC80F480A_SC000_DEMO -I ./SC000_SYS -I ./ISO7816 -I ./NORFlash-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-D__UVISION_VERSION="537" -D_RTE_ -DARMCM0 -D_RTE_-o ./debug/output/iso7816_api.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x625283FE)
+I (SC000_SYS\TSIM.h)(0x62D94997)
+I (SC000_SYS\SC_SFR.h)(0x5DC8D422)
+I (ISO7816\ISO7816.h)(0x5DC8D422)
+I (NORFlash\NORFlash.h)(0x5DC8D422)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x625283FE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x62528400)
+F (.\ISO7816\ISO7816.h)(0x5DC8D422)()
+F (.\NORFlash\NORFlash.c)(0x62DA86A0)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -mlittle-endian -gdwarf-4 -O3 -fno-function-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../THC80F480A_SC000_DEMO -I ./SC000_SYS -I ./ISO7816 -I ./NORFlash-I./RTE/_THC80F340A_DEMO-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include-D__UVISION_VERSION="537" -D_RTE_ -DARMCM0 -D_RTE_-o ./debug/output/norflash.o -MD)
+I (SC000_SYS\TSIM.h)(0x62D94997)
+I (SC000_SYS\SC_SFR.h)(0x5DC8D422)
+I (ISO7816\ISO7816.h)(0x5DC8D422)
+I (NORFlash\NORFlash.h)(0x5DC8D422)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x625283FE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x62528400)
+F (.\NORFlash\NORFlash.h)(0x5DC8D422)()

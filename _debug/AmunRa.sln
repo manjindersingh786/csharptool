@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32611.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Oasis", "Source\Oasis.vcxproj", "{67B89165-9BF8-4F9C-8227-F31D432706AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2574EF2-59C5-4711-9258-24BAE28605D6}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documents\Architecture\138422_lafer_michael_2014.pdf = ..\Documents\Architecture\138422_lafer_michael_2014.pdf
+		..\Documents\Execution\20220413 Project_Execution_Strategy.pptx = ..\Documents\Execution\20220413 Project_Execution_Strategy.pptx
+		..\Documents\Execution\20220414.pptx = ..\Documents\Execution\20220414.pptx
+		..\Documents\Execution\20220524 Project_Status.pptx = ..\Documents\Execution\20220524 Project_Status.pptx
+		..\Documents\Execution\20220610 Oasis Backlog Definition.xlsx = ..\Documents\Execution\20220610 Oasis Backlog Definition.xlsx
+		..\Documents\Training\20220618 Freshers’ Training.pptx = ..\Documents\Training\20220618 Freshers’ Training.pptx
+		..\Documents\Execution\JD_Dev_Lead.docx = ..\Documents\Execution\JD_Dev_Lead.docx
+		..\Documents\Execution\JD_SW_Engr.docx = ..\Documents\Execution\JD_SW_Engr.docx
+		..\Documents\Execution\Job Description_PO_SM.docx = ..\Documents\Execution\Job Description_PO_SM.docx
+		..\Documents\Architecture\Oasis File System.pptx = ..\Documents\Architecture\Oasis File System.pptx
+		..\Documents\Architecture\Screenshot 2022-05-16 111243.png = ..\Documents\Architecture\Screenshot 2022-05-16 111243.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67B89165-9BF8-4F9C-8227-F31D432706AA}.Debug|x64.ActiveCfg = Debug|x64
+		{67B89165-9BF8-4F9C-8227-F31D432706AA}.Debug|x64.Build.0 = Debug|x64
+		{67B89165-9BF8-4F9C-8227-F31D432706AA}.Debug|x86.ActiveCfg = Debug|Win32
+		{67B89165-9BF8-4F9C-8227-F31D432706AA}.Debug|x86.Build.0 = Debug|Win32
+		{67B89165-9BF8-4F9C-8227-F31D432706AA}.Release|x64.ActiveCfg = Release|x64
+		{67B89165-9BF8-4F9C-8227-F31D432706AA}.Release|x64.Build.0 = Release|x64
+		{67B89165-9BF8-4F9C-8227-F31D432706AA}.Release|x86.ActiveCfg = Release|Win32
+		{67B89165-9BF8-4F9C-8227-F31D432706AA}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {828474E9-CE91-4775-B2C7-3F5FDA1D4F36}
+	EndGlobalSection
+EndGlobal

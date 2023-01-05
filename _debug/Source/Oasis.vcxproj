@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{67b89165-9bf8-4f9c-8227-f31d432706aa}</ProjectGuid>
+    <RootNamespace>Source</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Oasis</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;SIZE_CODE=0xDA00;FEAT_EXHAUSTEARING;NO_OF_SPARE_PAGES_FOR_EXHASUTEARING=0x05;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\HardwareLayers\Abstraction\Include;.\HardwareLayers\HAL_Simulator\Include;.\Core\CommandRouter\include;.\HardwareLayers\Abstraction\7816_3\include;.\Core\7816_4\include;.\Core\102_222\include;.\Core\102_221\include;.\Core\MemoryManager\include;.\ExceptionManager\CoreExceptionManager\include;.\Core\OS_Init\include;.\Core\7816_9\include;.\BusinessComponent\Telecom\51_011\include;.\Core\Algorithms\include;.\Core\OasisCommands\include;.\BusinessComponent\Telecom\31_102\include;.\Core\ChannelManager\include;.\BusinessComponent\Telecom\31_111\include;.\BusinessComponent\Telecom\31_115\include;.\BusinessComponent\Telecom\31_116\include;.\Core\102_225\include;.\Core\102_226\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateMapFile>true</GenerateMapFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BusinessComponent\Telecom\31_102\source\usim_GenericCommands.c" />
+    <ClCompile Include="BusinessComponent\Telecom\31_111\source\31_111.c" />
+    <ClCompile Include="BusinessComponent\Telecom\31_111\source\USIM_CatHandling.c" />
+    <ClCompile Include="BusinessComponent\Telecom\31_115\source\31_115.c" />
+    <ClCompile Include="BusinessComponent\Telecom\31_116\source\31_116.c" />
+    <ClCompile Include="BusinessComponent\Telecom\51_011\source\sim_CatCommands.c" />
+    <ClCompile Include="BusinessComponent\Telecom\51_011\source\sim_FileHandlingCommands.c" />
+    <ClCompile Include="BusinessComponent\Telecom\51_011\source\sim_GenericCommands.c" />
+    <ClCompile Include="BusinessComponent\Telecom\51_011\source\sim_PinManagementCommands.c" />
+    <ClCompile Include="Core\102_221\source\102_221.c" />
+    <ClCompile Include="Core\102_221\source\CatCommands.c" />
+    <ClCompile Include="Core\102_221\source\FileHandlingCommands.c" />
+    <ClCompile Include="Core\102_221\source\GenericCommands.c" />
+    <ClCompile Include="Core\102_221\source\PinManagementCommands.c" />
+    <ClCompile Include="Core\102_221\source\TransmissionCommands.c" />
+    <ClCompile Include="Core\102_221\source\UICC_CommandDispatcher.c" />
+    <ClCompile Include="Core\102_222\source\102_222.c" />
+    <ClCompile Include="Core\102_225\source\102_225.c" />
+    <ClCompile Include="Core\102_226\source\102_226.c" />
+    <ClCompile Include="Core\102_226\source\Rfm.c" />
+    <ClCompile Include="Core\7816_4\source\7816_4.c" />
+    <ClCompile Include="Core\7816_4\source\PinManagement.c" />
+    <ClCompile Include="Core\7816_4\source\StatusWords.c" />
+    <ClCompile Include="Core\7816_9\source\7816_9.c" />
+    <ClCompile Include="Core\Algorithms\source\algo.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_3DES.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_AES.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_aes_128.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_AES_CMAC.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_BlockCipher.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_Checksum.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_comp128.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_CRC.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_DES.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_milenage.c" />
+    <ClCompile Include="Core\Algorithms\source\algo_Signature.c" />
+    <ClCompile Include="Core\ChannelManager\source\channelManager.c" />
+    <ClCompile Include="Core\CommandRouter\source\CommandRouter.c" />
+    <ClCompile Include="Core\MemoryManager\source\MemoryManager.c" />
+    <ClCompile Include="Core\MemoryManager\source\Utilities.c" />
+    <ClCompile Include="Core\OasisCommands\source\oasis_GenericCommands.c" />
+    <ClCompile Include="Core\OS_Init\source\OSinit.c" />
+    <ClCompile Include="ExceptionManager\CoreExceptionManager\source\ExceptionHandling.c" />
+    <ClCompile Include="HardwareLayers\Abstraction\7816_3\source\ATR.c" />
+    <ClCompile Include="HardwareLayers\Abstraction\7816_3\source\Communication.c" />
+    <ClCompile Include="HardwareLayers\Abstraction\AntiTearing\AntiTearing.c" />
+    <ClCompile Include="HardwareLayers\Abstraction\Main.c" />
+    <ClCompile Include="HardwareLayers\Abstraction\Oasis.c" />
+    <ClCompile Include="HardwareLayers\Abstraction\Wrappers\readUpdateNvmWrappers.c" />
+    <ClCompile Include="HardwareLayers\HAL_Simulator\SimulPublicVars.c" />
+    <ClCompile Include="HardwareLayers\HAL_Simulator\SimulReadWrite.c" />
+    <ClCompile Include="HardwareLayers\HAL_Simulator\SimulTearing.c" />
+    <ClCompile Include="HardwareLayers\HAL_Simulator\Startup\Simul.cpp" />
+    <ClCompile Include="HardwareLayers\HAL_Simulator\UtilityAPI\SimulLowLevel.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BusinessComponent\Telecom\31_102\include\31_102.h" />
+    <ClInclude Include="BusinessComponent\Telecom\31_102\include\31_102_extern.h" />
+    <ClInclude Include="BusinessComponent\Telecom\31_111\include\31_111.h" />
+    <ClInclude Include="BusinessComponent\Telecom\31_111\include\31_111_extern.h" />
+    <ClInclude Include="BusinessComponent\Telecom\31_115\include\31_115.h" />
+    <ClInclude Include="BusinessComponent\Telecom\31_115\include\31_115_extern.h" />
+    <ClInclude Include="BusinessComponent\Telecom\31_116\include\31_116.h" />
+    <ClInclude Include="BusinessComponent\Telecom\31_116\include\31_116_extern.h" />
+    <ClInclude Include="BusinessComponent\Telecom\51_011\include\51_011.h" />
+    <ClInclude Include="BusinessComponent\Telecom\51_011\include\51_011_extern.h" />
+    <ClInclude Include="Core\102_221\include\102_221.h" />
+    <ClInclude Include="Core\102_221\include\102_221_extern.h" />
+    <ClInclude Include="Core\102_221\include\UICC_CommandDispatcher.h" />
+    <ClInclude Include="Core\102_221\include\UICC_CommandDispatcher_extern.h" />
+    <ClInclude Include="Core\102_222\include\102_222.h" />
+    <ClInclude Include="Core\102_222\include\102_222_extern.h" />
+    <ClInclude Include="Core\102_225\include\102_225.h" />
+    <ClInclude Include="Core\102_225\include\102_225_extern.h" />
+    <ClInclude Include="Core\102_226\include\102_226.h" />
+    <ClInclude Include="Core\102_226\include\102_226_extern.h" />
+    <ClInclude Include="Core\7816_4\include\7816_4.h" />
+    <ClInclude Include="Core\7816_4\include\7816_4_extern.h" />
+    <ClInclude Include="Core\7816_4\include\statuswords.h" />
+    <ClInclude Include="Core\7816_9\include\7816_9.h" />
+    <ClInclude Include="Core\7816_9\include\7816_9_extern.h" />
+    <ClInclude Include="Core\Algorithms\include\Algorithms.h" />
+    <ClInclude Include="Core\Algorithms\include\Algorithms_extern.h" />
+    <ClInclude Include="Core\Algorithms\include\algo_blockCipher_extern.h" />
+    <ClInclude Include="Core\Algorithms\include\algo_checksum_extern.h" />
+    <ClInclude Include="Core\Algorithms\include\algo_signature_extern.h" />
+    <ClInclude Include="Core\ChannelManager\include\channelManager.h" />
+    <ClInclude Include="Core\ChannelManager\include\channelManager_extern.h" />
+    <ClInclude Include="Core\CommandRouter\include\CommandRouter.h" />
+    <ClInclude Include="Core\CommandRouter\include\CommandRouterExtern.h" />
+    <ClInclude Include="Core\MemoryManager\include\MemoryLayout.h" />
+    <ClInclude Include="Core\MemoryManager\include\MemoryManager.h" />
+    <ClInclude Include="Core\MemoryManager\include\MemoryManager_extern.h" />
+    <ClInclude Include="Core\MemoryManager\include\SystemPage.h" />
+    <ClInclude Include="Core\OasisCommands\include\OasisCommands.h" />
+    <ClInclude Include="Core\OasisCommands\include\OasisCommands_extern.h" />
+    <ClInclude Include="Core\OS_Init\include\OSinit.h" />
+    <ClInclude Include="Core\OS_Init\include\OSinit_extern.h" />
+    <ClInclude Include="ExceptionManager\CoreExceptionManager\include\ExceptionHandling.h" />
+    <ClInclude Include="ExceptionManager\CoreExceptionManager\include\ExceptionHandling_extern.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\7816_3\include\7816_3.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\7816_3\include\7816_3_extern.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\AntiTearing.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\AntiTearing_extern.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\BitDefines.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\Constants.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\Debug.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\Main.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\MemoryWrappers.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\Oasis.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\types.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\wrappers.h" />
+    <ClInclude Include="HardwareLayers\Abstraction\Include\wrappersExtern.h" />
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulConfig.h" />
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulDebug.h" />
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulExtern.h" />
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulLowLevel.h" />
+    <ClInclude Include="HardwareLayers\HAL_Simulator\Include\SimulTearing.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

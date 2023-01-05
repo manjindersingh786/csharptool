@@ -1,0 +1,74 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Manjinder SINGH, Colorplast, LIC=ESNP9-N1PV8-GAIDF-J3ZH2-8KHDN-E6BA1
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Community  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      UL2CM3.DLL V1.164.7.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+D:\Oasis\src\AmunRa\Code\card\THC80F340A_Demo_V100\THC80F340A_SC000_DEMO.uvprojx
+Project File Date:  07/22/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'THC80F340A_DEMO'
+assembling SC000_Vect.s...
+assembling SC000_Init.s...
+compiling Main.c...
+compiling Memory_API.c...
+compiling SC000_ISR.c...
+compiling SC_API.c...
+SC000_SYS/SC_API.c(34): warning: while loop has empty body [-Wempty-body]
+        while(SCSLEEP == 0x01);                                 //      Just for emulator debugging
+                              ^
+SC000_SYS/SC_API.c(34): note: put the semicolon on a separate line to silence this warning
+1 warning generated.
+compiling ISO7816_Main.c...
+compiling ISO7816_API.c...
+ISO7816/ISO7816_API.c(314): warning: cast to 'BYTE *' (aka 'unsigned char *') from smaller integer type 'HALFW' (aka 'unsigned short') [-Wint-to-pointer-cast]
+        Write_Bytes((BYTE *)Foffset,VectorTable,0x78);
+                    ^~~~~~~~~~~~~~~
+1 warning generated.
+compiling NORFlash.c...
+linking...
+.\Debug\Output\THC80F340A_SC000_DEMO.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+Program Size: Code=4588 RO-data=136 RW-data=120 ZI-data=1304  
+Finished: 0 information, 1 warning and 0 error messages.
+FromELF: creating hex file...
+".\Debug\Output\THC80F340A_SC000_DEMO.axf" - 0 Error(s), 3 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_THC80F340A_DEMO
+  C:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

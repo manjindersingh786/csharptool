@@ -1,0 +1,20 @@
+FLASH_LOAD_0 0x000000	0x0200
+{
+	FLASH_EXEC_0	+0	0x0200
+	{
+		*.o (VECT,+First)
+	}		
+}
+
+FLASH_LOAD_1 0x000200	0x055000
+{
+	FLASH_EXEC_1	+0	0xDA00
+	{
+		* (+RO)
+	}
+
+	RAM	0x20000000	0x1400
+	{
+		*(+RW,+ZI)	
+	}		
+}

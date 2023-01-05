@@ -1,0 +1,8 @@
+-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c
+-fno-rtti -funsigned-char -fshort-enums -fshort-wchar
+-mlittle-endian -gdwarf-4 -O3 -fno-function-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../THC80F480A_SC000_DEMO -I ./SC000_SYS -I ./ISO7816 -I ./NORFlash
+-I./RTE/_THC80F340A_DEMO
+-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+-IC:/Keil_v5/Packs/ARM/CMSIS/5.9.0/Device/ARM/ARMCM0/Include
+-D__UVISION_VERSION="537" -D_RTE_ -DARMCM0 -D_RTE_
+-o ./debug/output/memory_api.o -MD "SC000_SYS/Memory_API.c"

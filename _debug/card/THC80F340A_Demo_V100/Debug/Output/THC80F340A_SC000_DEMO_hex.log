@@ -1,0 +1,39 @@
+
+
+2022-07-22_18:19:16 Log file "D:/Oasis/src/20220621_KIT_Smitha/DEMO/THC80F340A_Demo_V100/Debug/Output/THC80F340A_SC000_DEMO_hex.log" was opened.
+
+2022-07-22_18:19:16 segList len = 1, segList =  {0000H 0000H 1600H}
+
+2022-07-22_18:19:16 vec file "D:/Oasis/src/20220621_KIT_Smitha/DEMO/THC80F340A_Demo_V100/Debug/Output/THC80F340A_SC000_DEMO_PCSCMgr.txt" was opened.
+
+2022-07-22_18:19:16 step0:reset the card...OK
+
+2022-07-22_18:19:16 step1:activate boot loader: skipped.
+
+2022-07-22_18:19:16 step2:verify boot loader...OK
+
+2022-07-22_18:19:16 step3:config bank and HEA...OK
+
+2022-07-22_18:19:16 step4:erase FLASH(no first sector)...OK
+
+2022-07-22_18:19:16 step5:program FLASH(no first sector)...OK
+
+2022-07-22_18:19:17 step6:verify FLASH(no first sector)...OK
+
+2022-07-22_18:19:17 step7:erase the first sector...OK
+
+2022-07-22_18:19:17 step8:program the first sector...OK
+
+2022-07-22_18:19:17 step9:verify the first sector...OK
+
+2022-07-22_18:19:17 step10:initialize OTP...OK
+
+2022-07-22_18:19:17 step11:download finish...OK
+
+2022-07-22_18:19:17 step12:power off...OK
+
+2022-07-22_18:19:17 The vector file was closed.
+
+2022-07-22_18:19:17 Total steps 12, failed 0.
+
+2022-07-22_18:19:17 The Log file was closed.

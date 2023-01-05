@@ -1,0 +1,7 @@
+#include "OasisCommands_extern.h"
+#include "types.h"
+#include "7816_4_extern.h"
+#include "7816_3_extern.h"
+#include "statuswords.h"
+#include "ExceptionHandling_extern.h"
+#include "MemoryManager.h"

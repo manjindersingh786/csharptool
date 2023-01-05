@@ -1,0 +1,8 @@
+#include "Oasis.h"
+#include "wrappersExtern.h"
+#include "Constants.h"
+#include "BitDefines.h"
+#include "7816_3_extern.h"
+#include "statuswords.h"
+#include "102_221_extern.h"
+#include "ExceptionHandling_extern.h"

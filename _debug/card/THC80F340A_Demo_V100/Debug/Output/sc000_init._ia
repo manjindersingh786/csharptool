@@ -1,0 +1,11 @@
+--cpu Cortex-M0 --li -g
+-I.\RTE\_THC80F340A_DEMO
+-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include
+-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\Device\ARM\ARMCM0\Include
+--pd "__UVISION_VERSION SETA 537"
+--pd "_RTE_ SETA 1"
+--pd "ARMCM0 SETA 1"
+--pd "_RTE_ SETA 1"
+--list .\debug\list\sc000_init.lst
+--xref -o .\debug\output\sc000_init.o
+--depend .\debug\output\sc000_init.d "SC000_SYS\SC000_Init.s"

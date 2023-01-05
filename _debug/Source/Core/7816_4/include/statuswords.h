@@ -1,0 +1,65 @@
+
+#ifndef _STATUS_WORDS_H
+#define _STATUS_WORDS_H
+#include "types.h"
+#include "51_011_extern.h"
+#include "102_221_extern.h"
+
+#define NORMAL_ENDING							(0x9000)
+#define INVALID_CLASS							(0x6E00)
+#define INVALID_INSTRUCTION						(0x6D00)
+#define WRONG_P1_P2								(0x6B00)
+#define WRONG_P3								(0x6700)
+#define INCORRECT_PARAMS_IN_DATAFIELD			(0x6A80)
+#define TECHNICAL_PROBLEM						(0x6F00)
+
+/*Add one more element in the end of enum type if new error (say E1) need to introduce
+* and add corresponding status words to E1 in SW struct array (const tStatusWords SW[]) defined in StatusWords.c
+* Please ensure the sequence of error in both tSwExceps and SW struct array
+*/
+typedef enum
+{
+	FIRST_CALL,
+	EXCEP_SEND_GET_RESPONSE, // Use THROW2() as it requires SW2 to specify
+	EXCEP_RESEND_COMMAND_WITH_CORRECT_P3, // Use THROW2() as it requires SW2 to specify
+	EXCEP_NORMAL_ENDING,
+	EXCEP_INVALID_CLASS,
+	EXCEP_INVALID_INS,
+	EXCEP_WRONG_P1_P2,
+	EXCEP_WRONG_P3, // Use THROW2() as it requires SW2 to specify
+	EXCEP_INCORRECT_DATAFIELD,
+	EXCEP_COMMAND_NOT_ALLOWED,
+	EXCEP_NOT_ENOUGH_MEMORY,
+	EXCEP_FILE_ID_ALREADY_EXISTS,
+	EXCEP_DF_NAME_ALREADY_EXISTS,
+	EXCEP_FILE_NOT_FOUND,
+	EXCEP_NO_FILE_SELECTED,
+	EXCEP_INVALID_FILE_TYPE,
+	EXCEP_ADDRESS_OUT_OF_RANGE,
+	EXCEP_SECURITY_NOT_SATISFIED,
+	EXCEP_RECORD_NOT_FOUND,
+	EXCEP_FILE_ALREADY_DEACTIVATED,
+	EXCEP_MAX_VALUE_REACHED,
+	EXCEP_PATTERN_NOT_FOUND,
+	EXCEP_REFERENCED_DATA_INVALIDATED,
+	EXCEP_TECHNICAL_PROBLEM,
+	EXCEP_REFERENCED_DATA_NOT_FOUND,
+	EXCEP_PIN_VERIFICATION_FAILED, // Use THROW2() as it requires SW2 to specify
+	EXCEP_PIN_BLOCKED,
+	EXCEP_CONTRADICTS_PIN_STATUS,
+	EXCEP_NO_PIN_INITIALIZED,
+	EXCEP_CONDITIONS_OF_USE_NOT_SATISFIED,
+	EXCEP_FUNCTION_NOT_SUPPORTED,
+	EXCEP_LOGICAL_CHANNEL_NOT_SUPPORTED,
+	EXCEP_INCORRECT_MAC,
+	EXCEP_NORMAL_END_PENDING_PROACTIVE_CMD	
+}tSwExceps;
+
+typedef struct {
+	uDiByte	udbUiccSw;
+	uDiByte	udbSimSw;
+} tStatusWords;
+
+extern const tStatusWords SW[];
+
+#endif //_STATUS_WORDS_H

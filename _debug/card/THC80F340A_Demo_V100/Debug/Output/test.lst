@@ -1,0 +1,489 @@
+        THUMB
+
+        AREA ||.text||, CODE, READONLY, ALIGN=2
+
+InsDSB PROC
+;;; NORFlash\NORFlash.c (5)
+        DSB      
+        BX       lr
+;;; NORFlash\NORFlash.c (9)
+        BX       lr
+        ENDP
+
+Erase_Page PROC
+;;; NORFlash\NORFlash.c (14)
+        LDR      r1,||__arm_cp.1_0||
+        MOVS     r2,#0x11
+;;; NORFlash\NORFlash.c (15)
+        STR      r2,[r1,#0xc]
+        MOVS     r2,#0x55
+;;; NORFlash\NORFlash.c (18)
+        STR      r2,[r1,#4]
+        MOVS     r2,#0xaa
+;;; NORFlash\NORFlash.c (19)
+        STR      r2,[r1,#8]
+        DSB      
+        BX       lr
+        MOVS     r2,#0xff
+;;; NORFlash\NORFlash.c (21)
+        STRB     r2,[r0,#0]
+|L2.32|
+;;; NORFlash\NORFlash.c (23)
+        LDR      r0,[r1,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.56|
+        LDR      r0,[r1,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.56|
+        LDR      r0,[r1,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.56|
+        LDR      r0,[r1,#0]
+        LSLS     r0,r0,#31
+        BEQ      |L2.32|
+|L2.56|
+;;; NORFlash\NORFlash.c (25)
+        LDR      r2,[r1,#0]
+        MOVS     r0,#1
+        ANDS     r2,r2,r0
+        STR      r2,[r1,#0]
+;;; NORFlash\NORFlash.c (27)
+        LDR      r3,[r1,#0]
+        LDR      r2,[r1,#0]
+        LSLS     r3,r3,#30
+        BMI      |L2.82|
+;;; NORFlash\NORFlash.c (32)
+        LSLS     r2,r2,#29
+        BPL      |L2.88|
+;;; NORFlash\NORFlash.c (34)
+        LDR      r2,[r1,#0]
+        MOVS     r0,#4
+        B        |L2.84|
+|L2.82|
+        MOVS     r0,#2
+|L2.84|
+        ANDS     r2,r2,r0
+        STR      r2,[r1,#0]
+|L2.88|
+;;; NORFlash\NORFlash.c (39)
+        BX       lr
+        MOV      r8,r8
+        ENDP
+
+||__arm_cp.1_0||
+        DCD      0x40020000
+Write_Bytes PROC
+;;; NORFlash\NORFlash.c (46)
+        PUSH     {r4-r6,lr}
+        CMP      r2,#0
+        BEQ      |L2.170|
+;;; NORFlash\NORFlash.c
+        MOVS     r4,#0
+        LDR      r3,||__arm_cp.2_0||
+|L2.106|
+        MOVS     r5,#1
+;;; NORFlash\NORFlash.c (51)
+        STR      r5,[r3,#0xc]
+        MOVS     r6,#0xaa
+;;; NORFlash\NORFlash.c (52)
+        STR      r6,[r3,#4]
+        MOVS     r6,#0x55
+;;; NORFlash\NORFlash.c (53)
+        STR      r6,[r3,#8]
+        DSB      
+        BX       lr
+;;; NORFlash\NORFlash.c (55)
+        LDRB     r6,[r1,r4]
+        STRB     r6,[r0,r4]
+|L2.128|
+;;; NORFlash\NORFlash.c (57)
+        LDR      r6,[r3,#0]
+        LSLS     r6,r6,#31
+        BNE      |L2.152|
+        LDR      r6,[r3,#0]
+        LSLS     r6,r6,#31
+        BNE      |L2.152|
+        LDR      r6,[r3,#0]
+        LSLS     r6,r6,#31
+        BNE      |L2.152|
+        LDR      r6,[r3,#0]
+        LSLS     r6,r6,#31
+        BEQ      |L2.128|
+|L2.152|
+;;; NORFlash\NORFlash.c (58)
+        LDR      r6,[r3,#0]
+        ANDS     r6,r6,r5
+        STR      r6,[r3,#0]
+;;; NORFlash\NORFlash.c (60)
+        LDR      r5,[r3,#0]
+        LSLS     r5,r5,#30
+        BMI      |L2.182|
+        ADDS     r4,r4,#1
+        CMP      r4,r2
+        BNE      |L2.106|
+|L2.170|
+        BL       mem_cmp
+        CMP      r0,#0
+        BEQ      |L2.192|
+        MOVS     r0,#1
+        POP      {r4-r6,pc}
+|L2.182|
+;;; NORFlash\NORFlash.c (62)
+        LDR      r1,[r3,#0]
+        MOVS     r0,#2
+        ANDS     r1,r1,r0
+        STR      r1,[r3,#0]
+;;; NORFlash\NORFlash.c (71)
+        POP      {r4-r6,pc}
+|L2.192|
+        MOVS     r0,#4
+        POP      {r4-r6,pc}
+        ENDP
+
+||__arm_cp.2_0||
+        DCD      0x40020000
+Write_ROW_Bytes PROC
+;;; NORFlash\NORFlash.c (74)
+        PUSH     {r4,r5,r7,lr}
+        LDR      r3,||__arm_cp.3_0||
+;;; NORFlash\NORFlash.c (75)
+        STR      r1,[r3,#0x20]
+;;; NORFlash\NORFlash.c (76)
+        STR      r2,[r3,#0x24]
+        MOVS     r4,#0x41
+;;; NORFlash\NORFlash.c (77)
+        STR      r4,[r3,#0xc]
+        MOVS     r4,#0xaa
+;;; NORFlash\NORFlash.c (78)
+        STR      r4,[r3,#4]
+        MOVS     r4,#0x55
+;;; NORFlash\NORFlash.c (79)
+        STR      r4,[r3,#8]
+        DSB      
+        BX       lr
+        MOVS     r4,#0xff
+;;; NORFlash\NORFlash.c (82)
+        STRB     r4,[r0,#0]
+|L2.230|
+;;; NORFlash\NORFlash.c (85)
+        LDR      r4,[r3,#0]
+        LSLS     r4,r4,#31
+        BNE      |L2.254|
+        LDR      r4,[r3,#0]
+        LSLS     r4,r4,#31
+        BNE      |L2.254|
+        LDR      r4,[r3,#0]
+        LSLS     r4,r4,#31
+        BNE      |L2.254|
+        LDR      r4,[r3,#0]
+        LSLS     r4,r4,#31
+        BEQ      |L2.230|
+|L2.254|
+;;; NORFlash\NORFlash.c (86)
+        LDR      r5,[r3,#0]
+        MOVS     r4,#1
+        ANDS     r5,r5,r4
+        STR      r5,[r3,#0]
+;;; NORFlash\NORFlash.c (88)
+        LDR      r5,[r3,#0]
+        LSLS     r5,r5,#30
+        BMI      |L2.282|
+        BL       mem_cmp
+        CMP      r0,#0
+        BNE      |L2.278|
+        MOVS     r4,#4
+|L2.278|
+        MOV      r0,r4
+        POP      {r4,r5,r7,pc}
+|L2.282|
+;;; NORFlash\NORFlash.c (90)
+        LDR      r0,[r3,#0]
+        MOVS     r4,#2
+        ANDS     r0,r0,r4
+        STR      r0,[r3,#0]
+;;; NORFlash\NORFlash.c (98)
+        MOV      r0,r4
+        POP      {r4,r5,r7,pc}
+        MOV      r8,r8
+        ENDP
+
+||__arm_cp.3_0||
+        DCD      0x40020000
+Write_page PROC
+;;; NORFlash\NORFlash.c (101)
+        PUSH     {r4-r7,lr}
+        SUB      sp,sp,#0x1c
+        MOV      r5,r0
+        LDR      r6,||__arm_cp.4_0||
+;;; NORFlash\NORFlash.c (75)
+        LDR      r0,||__arm_cp.4_1||
+        STR      r0,[r6,#0x20]
+        MOVS     r0,#0x80
+;;; NORFlash\NORFlash.c (76)
+        STR      r0,[r6,#0x24]
+        MOVS     r0,#0x41
+        STR      r0,[sp,#0x18]
+;;; NORFlash\NORFlash.c (77)
+        STR      r0,[r6,#0xc]
+        MOVS     r0,#0xaa
+        STR      r0,[sp,#0x14]
+;;; NORFlash\NORFlash.c (78)
+        STR      r0,[r6,#4]
+        MOVS     r0,#0x55
+        STR      r0,[sp,#0x10]
+;;; NORFlash\NORFlash.c (79)
+        STR      r0,[r6,#8]
+        DSB      
+        BX       lr
+        MOVS     r2,#0xff
+;;; NORFlash\NORFlash.c (82)
+        STRB     r2,[r5,#0]
+|L2.344|
+;;; NORFlash\NORFlash.c (85)
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.368|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.368|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.368|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BEQ      |L2.344|
+|L2.368|
+        LDR      r0,[r6,#0]
+        MOVS     r1,#1
+        ANDS     r0,r0,r1
+        STR      r0,[r6,#0]
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#30
+        BPL      |L2.384|
+        B        |L2.678|
+|L2.384|
+        STR      r2,[sp,#8]
+        STR      r1,[sp,#0xc]
+        LDR      r4,||__arm_cp.4_1||
+        MOVS     r7,#0x80
+        MOV      r0,r5
+        MOV      r1,r4
+        MOV      r2,r7
+        BL       mem_cmp
+        MOVS     r1,#4
+        CMP      r0,#0
+        BNE      |L2.410|
+        B        |L2.686|
+|L2.410|
+        STR      r1,[sp,#4]
+        ADDS     r4,r4,#0x80
+        STR      r4,[r6,#0x20]
+        STR      r7,[r6,#0x24]
+        LDR      r0,[sp,#0x18]
+        STR      r0,[r6,#0xc]
+        LDR      r0,[sp,#0x14]
+        STR      r0,[r6,#4]
+        LDR      r0,[sp,#0x10]
+        STR      r0,[r6,#8]
+        DSB      
+        BX       lr
+        LDR      r0,[sp,#8]
+        STRB     r0,[r5,r7]
+        MOV      r0,r5
+        ADDS     r0,r0,#0x80
+|L2.444|
+        LDR      r2,[r6,#0]
+        LSLS     r2,r2,#31
+        BNE      |L2.468|
+        LDR      r2,[r6,#0]
+        LSLS     r2,r2,#31
+        BNE      |L2.468|
+        LDR      r2,[r6,#0]
+        LSLS     r2,r2,#31
+        BNE      |L2.468|
+        LDR      r2,[r6,#0]
+        LSLS     r2,r2,#31
+        BEQ      |L2.444|
+|L2.468|
+        LDR      r2,[r6,#0]
+        LDR      r3,[sp,#0xc]
+        ANDS     r2,r2,r3
+        STR      r2,[r6,#0]
+        LDR      r2,[r6,#0]
+        LSLS     r2,r2,#30
+        BMI      |L2.678|
+        MOVS     r7,#0x80
+        MOV      r1,r4
+        MOV      r2,r7
+        BL       mem_cmp
+        CMP      r0,#0
+        BEQ      |L2.692|
+        LDR      r2,[sp,#0xc]
+        LSLS     r0,r2,#8
+        LDR      r1,||__arm_cp.4_1||
+        ADDS     r1,r1,r0
+        STR      r1,[r6,#0x20]
+        STR      r7,[r6,#0x24]
+        LDR      r3,[sp,#0x18]
+        STR      r3,[r6,#0xc]
+        LDR      r3,[sp,#0x14]
+        STR      r3,[r6,#4]
+        LDR      r3,[sp,#0x10]
+        STR      r3,[r6,#8]
+        DSB      
+        BX       lr
+        LDR      r3,[sp,#8]
+        STRB     r3,[r5,r0]
+        ADDS     r5,r5,r0
+|L2.532|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.556|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.556|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.556|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BEQ      |L2.532|
+|L2.556|
+        LDR      r0,[r6,#0]
+        ANDS     r0,r0,r2
+        STR      r0,[r6,#0]
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#30
+        BMI      |L2.678|
+        MOVS     r7,#0x80
+        MOV      r0,r5
+        MOV      r2,r7
+        BL       mem_cmp
+        CMP      r0,#0
+        LDR      r1,[sp,#4]
+        BEQ      |L2.686|
+        MOVS     r0,#3
+        LSLS     r0,r0,#7
+        LDR      r1,||__arm_cp.4_1||
+        ADDS     r1,r1,r0
+        STR      r1,[r6,#0x20]
+        STR      r7,[r6,#0x24]
+        LDR      r0,[sp,#0x18]
+        STR      r0,[r6,#0xc]
+        LDR      r0,[sp,#0x14]
+        STR      r0,[r6,#4]
+        LDR      r0,[sp,#0x10]
+        STR      r0,[r6,#8]
+        DSB      
+        BX       lr
+        LDR      r0,[sp,#8]
+        STRB     r0,[r5,r7]
+        ADDS     r5,r5,#0x80
+|L2.620|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.644|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.644|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BNE      |L2.644|
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#31
+        BEQ      |L2.620|
+|L2.644|
+;;; NORFlash\NORFlash.c (86)
+        LDR      r0,[r6,#0]
+        LDR      r2,[sp,#0xc]
+        ANDS     r0,r0,r2
+        STR      r0,[r6,#0]
+;;; NORFlash\NORFlash.c (88)
+        LDR      r0,[r6,#0]
+        LSLS     r0,r0,#30
+        BMI      |L2.678|
+        MOVS     r2,#0x80
+        MOV      r0,r5
+        BL       mem_cmp
+        CMP      r0,#0
+        BEQ      |L2.700|
+        LDR      r1,[sp,#0xc]
+        MOV      r0,r1
+        ADD      sp,sp,#0x1c
+        POP      {r4-r7,pc}
+|L2.678|
+;;; NORFlash\NORFlash.c (90)
+        LDR      r0,[r6,#0]
+        MOVS     r1,#2
+        ANDS     r0,r0,r1
+        STR      r0,[r6,#0]
+|L2.686|
+;;; NORFlash\NORFlash.c (111)
+        MOV      r0,r1
+        ADD      sp,sp,#0x1c
+        POP      {r4-r7,pc}
+|L2.692|
+        LDR      r1,[sp,#4]
+        MOV      r0,r1
+        ADD      sp,sp,#0x1c
+        POP      {r4-r7,pc}
+|L2.700|
+        MOVS     r1,#4
+        MOV      r0,r1
+        ADD      sp,sp,#0x1c
+        POP      {r4-r7,pc}
+        ENDP
+
+||__arm_cp.4_0||
+        DCD      0x40020000
+||__arm_cp.4_1||
+        DCD      FlashBuffer
+
+        AREA ||.ARM.exidx||, LINKORDER=||.text||, DATA, READONLY, SECTYPE={SHT_ARM_EXIDX}, ALIGN=2
+
+        DCD      0x00000000
+        RELOC 42, ||.text||
+        DCD      0x00000001
+        DCD      0x00000008
+        RELOC 42, ||.text||
+        DCD      0x00000001
+        DCD      0x00000060
+        RELOC 42, ||.text||
+        DCD      0x00000001
+        DCD      0x000000c8
+        RELOC 42, ||.text||
+        DCD      0x00000001
+        DCD      0x0000012c
+        RELOC 42, ||.text||
+        DCD      0x00000001
+
+        AREA ||.bss.FlashBuffer||, DATA, NOINIT, ALIGN=0
+
+FlashBuffer
+        %        512
+
+        EXPORT InsDSB [CODE]
+        EXPORT Erase_Page [CODE]
+        EXPORT Write_Bytes [CODE]
+        EXPORT Write_ROW_Bytes [CODE]
+        EXPORT Write_page [CODE]
+        EXPORT FlashBuffer [DATA,SIZE=512]
+
+        IMPORT mem_cmp [DYNAMIC]
+
+        KEEP ||__arm_cp.1_0||
+        KEEP ||__arm_cp.2_0||
+        KEEP ||__arm_cp.3_0||
+        KEEP ||__arm_cp.4_0||
+        KEEP ||__arm_cp.4_1||
+
+        ATTR FILESCOPE
+        ATTR SETVALUE Tag_ABI_PCS_wchar_t,2
+        ATTR SETVALUE Tag_ABI_enum_size,1
+        ATTR SETVALUE Tag_ABI_optimization_goals,2
+        ATTR SETVALUE Tag_ABI_FP_16bit_format,1
+        ATTR SETSTRING Tag_conformance,"2.09"
+        ATTR SETVALUE AV,6,0
+
+        ASSERT {ENDIAN} = "little"
+        END

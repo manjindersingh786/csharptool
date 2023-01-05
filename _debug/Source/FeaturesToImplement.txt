@@ -1,0 +1,41 @@
+2G bugs fixing (20 md)
+
+USIM: 80md (development + study)
+	Manage Channel command
+	support of 4 logical channels
+	Change in GET RESPONSE wrt Logical channels
+	Change in PIN commands wrt Logical channels
+	Select By Path
+	Select by AID
+	FCP response of MF/DF/ADF
+	FCP response of TF/LF/CF
+	Deactivate/Activate
+	Status command 
+	Support of SFI in read binary command
+	Support of SFI in read record command
+	Support of SFI in Update binary command
+	Support of SFI in Update record command
+	Milenage Algorithm
+	Even Authenticate Command
+	SQN verification as per TS 33.102
+	Search Record
+
+RFM: 24 md
+	Ota updatable infor in file creation
+	Storing keyset
+	AES Algorithm
+	Security
+		SMS-TLV parsing, Secured data parsing, 
+		Decryption
+		MAC calculation
+		Counter management
+	RFM dispatcher
+	PoR preparation
+
+Testing as per etsi 31.122 : 20md
+Testing as per etsi 31.048 : 10md
+Bugs fixing: 30 md
+
+
+7 weeks:
+29th Oct
